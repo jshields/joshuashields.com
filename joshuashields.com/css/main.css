@@ -1,0 +1,377 @@
+/* Base layer */
+/* Overlaid or covering elements */
+/* Static UI elements */
+/* Interactive UI elements */
+/* Active state */
+/* Inactive state */
+/* TODO use PostCSS instead of this mixin */
+/* TODO animation, animation-delay */
+/* Typography */
+/* Images */
+.btn {
+  text-decoration: none;
+  text-align: center;
+  margin: 0.4em auto 0 auto;
+  padding: 1em 0;
+  font-size: 2em;
+  background-color: rgba(255, 128, 0, 0.75);
+  color: #000;
+  border: none;
+  outline-color: #ffbd73;
+  display: block;
+  cursor: pointer;
+  -webkit-transition: width .5s ease-out;
+  -moz-transition: width .5s ease-out;
+  -o-transition: width .5s ease-out;
+  transition: width .5s ease-out;
+  width: 80%;
+}
+
+.btn:hover {
+  background-color: #ffbd73;
+  color: #fff;
+  -webkit-transition: width .5s ease-out;
+  -moz-transition: width .5s ease-out;
+  -o-transition: width .5s ease-out;
+  transition: width .5s ease-out;
+  width: 95%;
+}
+
+.btn img {
+  vertical-align: middle;
+}
+
+.btn:hover img {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}
+
+@media screen and (max-width: 590px) {
+  /* removes animations for buttons on mobile */
+  .btn {
+    width: 80%;
+  }
+
+  .btn:hover {
+    width: 80%;
+  }
+}
+textarea {
+  text-align: left;
+  resize: vertical;
+  max-height: 20%;
+}
+
+.form-field {
+  background-color: #222;
+  font-size: 1em;
+  margin: .5em;
+  padding: .5em;
+  outline-width: 0;
+  border: none;
+  color: rgba(255, 128, 0, 0.75);
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
+  width: 50%;
+}
+
+.form-field:focus {
+  font-size: 1em;
+  margin: .5em;
+  padding: .5em;
+  outline-style: solid;
+  outline-width: 0.3em;
+  outline-color: #ffbd73;
+  color: #ffbd73;
+  border: none;
+}
+
+.form-field::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #555;
+}
+
+.form-field:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #555;
+}
+
+.form-field::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #555;
+}
+
+.form-field:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: #555;
+}
+
+.modal {
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: fixed;
+}
+
+.modal-back {
+  z-index: 20;
+  display: table;
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  background: rgba(255, 255, 255, 0.75);
+  margin: 0 auto;
+}
+
+.modal-front {
+  z-index: 30;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.modal-content {
+  z-index: 40;
+  text-align: center;
+  background-color: #fff;
+}
+
+.modal-col {
+  z-index: 50;
+  width: calc(100%*2/3);
+  margin-left: calc(100%/6);
+}
+
+/*
+grid                   
+*/
+.main-col {
+  overflow: hidden;
+  padding-top: 3.5%;
+  text-align: center;
+  width: calc(100%*2/3);
+  margin-left: calc(100%/6);
+}
+
+.col-60 {
+  width: 60%;
+}
+
+.col-third {
+  float: left;
+  width: calc(100%/3);
+}
+
+.col-20 {
+  float: left;
+  width: calc(100%/5);
+}
+
+::selection {
+  background-color: #0080ff;
+  color: #fff;
+}
+
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* TODO refactor */
+#body {
+  background: #222 url("../images/shield_logo_4.png") no-repeat fixed center;
+  background-size: 50% auto;
+}
+
+body {
+  color: #0080ff;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+footer {
+  text-align: center;
+  padding: 1em 0;
+  width: 100%;
+}
+
+h1, h2, h3, form label {
+  margin: 0 0 0.1em 0;
+  display: block;
+  font-weight: bold;
+}
+
+div, nav {
+  border-radius: 0;
+}
+
+/* TODO -> .hidden */
+.sleeping-alert {
+  display: none;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.list {
+  margin: 0;
+}
+
+.list-description {
+  margin: 1em 0 0.2em 0;
+}
+
+#pro-pic {
+  background-image: url("../images/josh4.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 0.3em solid #0080ff;
+  background-size: 150%;
+  width: 15em;
+  height: 15em;
+  margin-left: 1em;
+  float: right;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(255, 128, 0, 0.75);
+}
+
+a:hover {
+  color: #ffbd73;
+}
+
+.img-link-wrap {
+  margin: 2em 1em 1em 1em;
+  display: inline-block;
+}
+
+.img-link-wrap a img {
+  padding: 0;
+  vertical-align: middle;
+}
+
+.icons-wrap {
+  display: inline;
+}
+
+#social-media-icons {
+  position: relative;
+  left: 200%;
+  width: 100%;
+  -webkit-animation: slide 1s forwards;
+  -webkit-animation-delay: 0s;
+  -moz-animation: slide 1s forwards;
+  -moz-animation-delay: 0s;
+  -o-animation: slide 1s forwards;
+  -o-animation-delay: 0s;
+  animation: slide 1s forwards;
+  animation-delay: 0s;
+}
+
+@-webkit-keyframes slide {
+  100% {
+    left: 0;
+  }
+}
+@-moz-keyframes slide {
+  100% {
+    left: 0;
+  }
+}
+@-o-keyframes slide {
+  100% {
+    left: 0;
+  }
+}
+@keyframes slide {
+  100% {
+    left: 0;
+  }
+}
+/* TODO refactor media queries to be modular */
+@media screen and (max-width: 1024px) {
+  #pro-pic {
+    width: 8em;
+    height: 8em;
+    float: none;
+    display: block;
+    margin: 0 auto;
+  }
+
+  p {
+    clear: both;
+    padding: 0.3em;
+  }
+
+  .modal {
+    position: absolute;
+    height: 160%;
+  }
+
+  .modal-col {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .main-col {
+    overflow: hidden;
+    padding-top: 0%;
+    text-align: center;
+    width: 100%;
+    margin-left: 0;
+  }
+}
+/* Contact media */
+#phone-number {
+  display: none;
+}
+
+@media screen and (max-width: 512px) {
+  #phone-number {
+    display: block;
+  }
+
+  #social-media-icons .icons-wrap {
+    display: block;
+  }
+}
+/* Print media */
+#print-message {
+  display: none;
+}
+
+@media print {
+  #print-message {
+    display: block;
+    page-break-after: avoid;
+  }
+
+  #main, #modals {
+    display: none;
+  }
+
+  html {
+    background: transparent;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    page-break-after: avoid;
+  }
+
+  body, p, div, h1, h2, h3, #main, #modals, footer {
+    /* -webkit-filter:grayscale(1); */
+    color: #000;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    color: #222;
+    text-decoration: underline;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

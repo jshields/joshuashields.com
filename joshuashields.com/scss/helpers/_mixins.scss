@@ -1,0 +1,9 @@
+/* TODO use PostCSS instead of this mixin */
+@mixin vendor-prefix($prop, $val) {
+    #{$prop}: $val;
+    -webkit-#{$prop}: $val;
+    -moz-#{$prop}: $val;
+    -o-#{$prop}: $val;
+}
+
+/* TODO animation, animation-delay */

@@ -1,0 +1,190 @@
+@import 'helpers/color';
+@import 'helpers/mixins';
+@import 'helpers/variables';
+
+@import 'components/button';
+@import 'components/form';
+@import 'components/modal';
+
+@import 'layout/grid';
+
+::selection {
+    background-color: $color-static;
+    color: $color-bg-overlay;
+}
+
+html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* TODO refactor */
+#body {
+    background: $color-bg-main url($logo_shape) no-repeat fixed center;
+    background-size: 50% auto;
+}
+body {
+    color: $color-static;
+    font-family: $font-stack;
+}
+
+footer {
+    text-align: center;
+    padding: 1em 0;
+    width: 100%;
+}
+h1, h2, h3, form label {
+    margin: 0 0 0.1em 0;
+    display: block;
+    font-weight: bold;
+}
+div, nav {
+    border-radius: 0;
+}
+
+/* TODO -> .hidden */
+.sleeping-alert {
+    display: none;
+}
+.text-left {
+  text-align: left;
+}
+.list {
+    margin: 0;
+}
+.list-description {
+    margin: 1em 0 0.2em 0;
+}
+
+#pro-pic {
+    background-image: url($headshot);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 0.3em solid $color-static;
+    background-size: 150%;
+    width: 15em;
+    height: 15em;
+    margin-left: 1em;
+    float: right;
+}
+
+a {
+  text-decoration: none;
+  color: $color-inactive;
+}
+a:hover {
+  color: $color-active;
+}
+
+.img-link-wrap {
+  margin: 2em 1em 1em 1em;
+  display: inline-block;
+}
+.img-link-wrap a img {
+  padding: 0;
+  vertical-align: middle;
+}
+
+.icons-wrap {
+  display: inline;
+}
+#social-media-icons {
+  position: relative;
+  left: 200%;
+  width: 100%;
+  -webkit-animation: slide 1s forwards;
+  -webkit-animation-delay: 0s;
+  -moz-animation: slide 1s forwards;
+  -moz-animation-delay: 0s;
+  -o-animation: slide 1s forwards;
+  -o-animation-delay: 0s;
+  animation: slide 1s forwards;
+  animation-delay: 0s;
+}
+@-webkit-keyframes slide {
+    100% {left: 0;}
+}
+@-moz-keyframes slide {
+    100% {left: 0;}
+}
+@-o-keyframes slide {
+    100% {left: 0;}
+}
+@keyframes slide {
+    100% {left: 0;}
+}
+
+/* TODO refactor media queries to be modular */
+@media screen and (max-width: 1024px) {
+    #pro-pic {
+      width: 8em;
+      height: 8em;
+      float: none;
+      display: block;
+      margin: 0 auto;
+    }
+    p {
+      clear: both;
+      padding: 0.3em;
+    }
+    .modal {
+      position: absolute;
+      height: 160%;
+    }
+    .modal-col {
+      width: 100%;
+      margin-left: 0;
+    }
+    .main-col {
+      overflow: hidden;
+      padding-top: 0%;
+      text-align: center;
+      width: 100%;
+      margin-left: 0;
+    }
+}
+
+/* Contact media */
+#phone-number {
+  display: none;
+}
+@media screen and (max-width: 512px) {
+    #phone-number {
+      display: block;
+    }
+    #social-media-icons .icons-wrap {
+      display: block;
+    }
+}
+
+/* Print media */
+#print-message {
+    display: none;
+}
+@media print {
+    #print-message {
+        display: block;
+        page-break-after: avoid;
+    }
+    #main, #modals {
+        display: none;
+    }
+    html {
+        background: transparent;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        page-break-after: avoid;
+    }
+    body, p, div, h1, h2, h3, #main, #modals, footer {
+        /* -webkit-filter:grayscale(1); */
+        color: $color-inactive-text;
+        margin: 0;
+        padding: 0;
+    }
+    a {
+        color: $color-bg-main;
+        text-decoration: underline;
+    }
+}

@@ -1,0 +1,44 @@
+.btn {
+    text-decoration: none;
+    text-align: center;
+    margin: 0.4em auto 0 auto;
+    padding: 1em 0;
+    font-size: 2em;
+    background-color: $color-inactive;
+    color: $color-inactive-text;
+    border: none;
+    outline-color: $color-active;
+    display: block;
+    cursor: pointer;
+    -webkit-transition: width .5s ease-out;
+    -moz-transition: width .5s ease-out;
+    -o-transition: width .5s ease-out;
+    transition: width .5s ease-out;
+    width: 80%;
+}
+.btn:hover {
+    background-color: $color-active;
+    color: $color-active-text;
+    -webkit-transition: width .5s ease-out;
+    -moz-transition: width .5s ease-out;
+    -o-transition: width .5s ease-out;
+    transition: width .5s ease-out;
+    width: 95%;
+}
+.btn img {
+    vertical-align: middle;
+}
+.btn:hover img {
+    -webkit-filter: invert(1);
+    filter: invert(1);
+}
+
+@media screen and (max-width: 590px) {
+  /* removes animations for buttons on mobile */
+  .btn {
+    width: 80%;
+  }
+  .btn:hover {
+    width: 80%;
+  }
+}

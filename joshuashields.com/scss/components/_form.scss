@@ -1,0 +1,39 @@
+textarea {
+    text-align: left;
+    resize: vertical;
+    max-height: 20%;
+}
+.form-field {
+    background-color: $color-bg-main;
+    font-size: 1em;
+    margin: .5em;
+    padding:.5em;
+    outline-width: 0;
+    border: none;
+    color: $color-inactive;
+    font-family: $font-stack;
+    text-align: center;
+    width: 50%;
+}
+.form-field:focus {
+    font-size: 1em;
+    margin: .5em;
+    padding: .5em;
+    outline-style: solid;
+    outline-width: 0.3em;
+    outline-color: $color-active;
+    color: $color-active;
+    border: none;
+}
+.form-field::-webkit-input-placeholder { /* WebKit browsers */
+    color: $color-placeholder;
+}
+.form-field:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: $color-placeholder;
+}
+.form-field::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: $color-placeholder;
+}
+.form-field:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: $color-placeholder;
+}

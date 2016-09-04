@@ -1,3 +1,3 @@
 # joshuashields.com
 
-Coming soon...
+Website of Joshua Shields.

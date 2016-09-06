@@ -19,7 +19,7 @@
 	<link rel="shortcut icon" href="http://www.joshuashields.com/favicon.ico?v=1" type="image/x-icon" />
 	<link rel="icon" href="http://www.joshuashields.com/favicon.ico?v=1" type="image/x-icon" />
 </head>
-<body id="body">
+<body>
 <section id="modals">
 	<div id="secret-modal" class="modal">
 		<div class="modal-back">
@@ -43,7 +43,7 @@
 				<div class="modal-content">
 					<h1>about</h1>
 					<div class="modal-col text-left">
-					<div id="pro-pic"></div>
+					   <div id="pro-pic"></div>
 						<p class="list-description">
                             I am a designer &amp; developer dedicated to creating digital 
 							experiences that extend to the human experience. I specialize in:
@@ -72,11 +72,17 @@
 								</ul>
 							</li>
 						</ul>
-                        <p class="list-description">See me on:</p>
+                        <label class="list-description">See me on:</label>
                         <ul class="list">
-                            <li><a href="https://www.codecademy.com/JHShields" target="_blank" rel="noopener noreferrer">Codecademy</a></li>
-                            <li><a href="https://github.com/jshields" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-                            <li><a href="http://stackoverflow.com/users/3538313/jhs" target="_blank" rel="noopener noreferrer">Stack Overflow</a></li>
+                            <li>
+                                <a href="https://www.codecademy.com/JHShields" target="_blank" rel="noopener noreferrer">Codecademy</a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/jshields" target="_blank" rel="noopener noreferrer">GitHub</a>
+                            </li>
+                            <li>
+                                <a href="http://stackoverflow.com/users/3538313/jhs" target="_blank" rel="noopener noreferrer">Stack Overflow</a>
+                            </li>
                         </ul>
 					</div>
 					<button class="btn btn-close">okay</button>
@@ -92,18 +98,15 @@
 				<h2 id="phone-number">call me at <a href="tel:5033301909">(503) 330-1909</a></h2>
 					<form id="contact-form" method="post" action="contact.php">
 						<div class="modal-col">
-							<div>
-						    	<label for="email">email address</label>
+					    	<label for="email" class="form-label">email address
 						    	<input id="email" name="email" type="email" class="form-field" placeholder="foo@example.com" />
-							</div>
-							<div>
-						    	<label for="name">name</label>
+							</label>
+					    	<label for="name" class="form-label">name
 						    	<input id="name" name="name" type="text" class="form-field" placeholder="Firstname Lastname" />
-							</div>
-							<div>
-								<label for="message">message</label>
+							</label>
+							<label for="message" class="form-label">message
 								<textarea id="message" name="message" class="form-field" rows="3" placeholder="Hey Josh! ..." spellcheck="true"></textarea>
-							</div>
+							</label>
 						</div>
 						<?php
 							session_start();
@@ -111,9 +114,13 @@
 								echo $_SESSION['cf_return'];
 							}
 						?>
-						<p id="contact-note">This message will be sent to <a href="mailto:josh@joshuashields.com">josh@joshuashields.com</a>.</p>
-						<p id="contact-alert" class="alert sleeping-alert">Message not sent. There doesn't seem to be anything written.</p>
-						<!-- not using type submit to avoid forced styling by browsers -->
+						<p id="contact-note">
+                            This message will be sent to <a href="mailto:josh@joshuashields.com">josh@joshuashields.com</a>.
+                        </p>
+						<p id="contact-alert" class="alert sleeping-alert">
+                            Message not sent. There doesn't seem to be anything written.
+                        </p>
+						<!-- not using type submit to avoid forced styling by certain browsers -->
 						<input id="btn-submit" type="button" class="btn" value="submit" />
 					</form>
 					<button class="btn btn-close">cancel</button>
@@ -141,11 +148,14 @@
 	</div>
 	<a id="btn-about-modal" href="#about-modal" class="btn btn-modal wall-link">about</a>
 	<a id="btn-contact-modal" href="#contact-modal" class="btn btn-modal wall-link">contact</a>
-	<a id="btn-resume" target="_blank" rel="noopener noreferrer" href="https://docs.google.com/document/d/14nzUhhEC5qtAnwvid-yeuFz6cZIF89zFjFziiEB_NrU/edit?usp=sharing" class="btn btn-link wall-link">r&eacute;sum&eacute; <img src="images/black_rightpointing_triangle.png" alt="&#9654;" /></a>
+	<a id="btn-resume" target="_blank" rel="noopener noreferrer" href="https://docs.google.com/document/d/14nzUhhEC5qtAnwvid-yeuFz6cZIF89zFjFziiEB_NrU/edit?usp=sharing" class="btn btn-link wall-link"><!--
+    -->r&eacute;sum&eacute; <img src="images/black_rightpointing_triangle.png" alt="&#9654;" /><!--
+    --></a>
 </section>
 <footer>
 	<address>
-		&copy; Joshua Shields. All Rights Reserved. Contact at: <a href="mailto:josh@joshuashields.com" class="wall-link">josh@joshuashields.com</a>
+		&copy; Joshua Shields. All Rights Reserved. Contact at: <!--
+        --><a href="mailto:josh@joshuashields.com" class="wall-link">josh@joshuashields.com</a>
 	</address>
 </footer>
 <aside id="print-message">
@@ -157,7 +167,7 @@
 		<li>My phone number: (503) 330-1909</li>
 	</ul>
 </aside>
-<script src="js/lib/jquery-2.1.1.min.js" type="text/javascript"></script>
+<script src="js/lib/jquery.min.js" type="text/javascript"></script>
 <script src="js/main.js" type="text/javascript"></script>
 <script type="text/javascript">
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

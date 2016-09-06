@@ -1,7 +1,6 @@
+.sass-cache/
 .htaccess
 error_log
-
-contact.php
-
 node_modules
-.sass-cache/
+lib
+contact.php

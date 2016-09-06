@@ -1,4 +1,5 @@
 # system packages, installed using apt-get or equivalent
+php5
 nodejs
 npm
 ruby

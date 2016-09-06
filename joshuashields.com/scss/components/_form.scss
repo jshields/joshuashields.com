@@ -3,27 +3,30 @@ textarea {
     resize: vertical;
     max-height: 20%;
 }
+.form-label {
+    margin: 0 0 0.1em 0;
+    display: block;
+    font-weight: bold;
+}
 .form-field {
+    font-family: $font-stack;
+    text-align: center;
     background-color: $color-bg-main;
     font-size: 1em;
-    margin: .5em;
-    padding:.5em;
+    padding: 0.5em;
+    margin: 0.5em auto;
+    width: 50%;
+    display: block;
     outline-width: 0;
     border: none;
     color: $color-inactive;
-    font-family: $font-stack;
-    text-align: center;
-    width: 50%;
 }
 .form-field:focus {
-    font-size: 1em;
-    margin: .5em;
-    padding: .5em;
     outline-style: solid;
     outline-width: 0.3em;
     outline-color: $color-active;
-    color: $color-active;
     border: none;
+    color: $color-active; 
 }
 .form-field::-webkit-input-placeholder { /* WebKit browsers */
     color: $color-placeholder;

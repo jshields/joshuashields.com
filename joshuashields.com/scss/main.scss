@@ -18,15 +18,11 @@ html, body {
     width: 100%;
     height: 100%;
 }
-
-/* TODO refactor */
-#body {
-    background: $color-bg-main url($logo_shape) no-repeat fixed center;
-    background-size: 50% auto;
-}
 body {
     color: $color-static;
     font-family: $font-stack;
+    background: $color-bg-main url($logo_shape) no-repeat fixed center;
+    background-size: 50% auto;
 }
 
 footer {
@@ -34,7 +30,7 @@ footer {
     padding: 1em 0;
     width: 100%;
 }
-h1, h2, h3, form label {
+h1, h2, h3, {
     margin: 0 0 0.1em 0;
     display: block;
     font-weight: bold;
@@ -43,7 +39,6 @@ div, nav {
     border-radius: 0;
 }
 
-/* TODO -> .hidden */
 .sleeping-alert {
     display: none;
 }
@@ -70,37 +65,37 @@ div, nav {
 }
 
 a {
-  text-decoration: none;
-  color: $color-inactive;
+    text-decoration: none;
+    color: $color-inactive;
 }
 a:hover {
-  color: $color-active;
+    color: $color-active;
 }
 
 .img-link-wrap {
-  margin: 2em 1em 1em 1em;
-  display: inline-block;
+    margin: 2em 1em 1em 1em;
+    display: inline-block;
 }
 .img-link-wrap a img {
-  padding: 0;
-  vertical-align: middle;
+    padding: 0;
+    vertical-align: middle;
 }
 
 .icons-wrap {
-  display: inline;
+    display: inline;
 }
 #social-media-icons {
-  position: relative;
-  left: 200%;
-  width: 100%;
-  -webkit-animation: slide 1s forwards;
-  -webkit-animation-delay: 0s;
-  -moz-animation: slide 1s forwards;
-  -moz-animation-delay: 0s;
-  -o-animation: slide 1s forwards;
-  -o-animation-delay: 0s;
-  animation: slide 1s forwards;
-  animation-delay: 0s;
+    position: relative;
+    left: 200%;
+    width: 100%;
+    -webkit-animation: slide 1s forwards;
+    -webkit-animation-delay: 0s;
+    -moz-animation: slide 1s forwards;
+    -moz-animation-delay: 0s;
+    -o-animation: slide 1s forwards;
+    -o-animation-delay: 0s;
+    animation: slide 1s forwards;
+    animation-delay: 0s;
 }
 @-webkit-keyframes slide {
     100% {left: 0;}
@@ -118,30 +113,30 @@ a:hover {
 /* TODO refactor media queries to be modular */
 @media screen and (max-width: 1024px) {
     #pro-pic {
-      width: 8em;
-      height: 8em;
-      float: none;
-      display: block;
-      margin: 0 auto;
+        width: 8em;
+        height: 8em;
+        float: none;
+        display: block;
+        margin: 0 auto;
     }
     p {
-      clear: both;
-      padding: 0.3em;
+        clear: both;
+        padding: 0.3em;
     }
     .modal {
-      position: absolute;
-      height: 160%;
+        position: absolute;
+        height: 160%;
     }
     .modal-col {
-      width: 100%;
-      margin-left: 0;
+        width: 100%;
+        margin-left: 0;
     }
     .main-col {
-      overflow: hidden;
-      padding-top: 0%;
-      text-align: center;
-      width: 100%;
-      margin-left: 0;
+        overflow: hidden;
+        padding-top: 0%;
+        text-align: center;
+        width: 100%;
+        margin-left: 0;
     }
 }
 

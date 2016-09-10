@@ -110,16 +110,16 @@
 						</div>
 						<?php
 							session_start();
-							if ($_SESSION['cf_return']){
+							if ($_SESSION['cf_return']) {
 								echo $_SESSION['cf_return'];
 							}
 						?>
-						<p id="contact-note">
+						<div id="alert alert-info">
                             This message will be sent to <a href="mailto:josh@joshuashields.com">josh@joshuashields.com</a>.
-                        </p>
-						<p id="contact-alert" class="alert sleeping-alert">
+                        </div>
+						<div class="alert alert-error alert-sleeping">
                             Message not sent. There doesn't seem to be anything written.
-                        </p>
+                        </div>
 						<!-- not using type submit to avoid forced styling by certain browsers -->
 						<input id="btn-submit" type="button" class="btn" value="submit" />
 					</form>

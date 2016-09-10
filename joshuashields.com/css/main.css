@@ -1,9 +1,18 @@
-/* Base layer */
-/* Overlaid or covering elements */
-/* Static UI elements */
+/* Simple base shades */
+/*
+Overlaid or covering elements
+E.g. popovers, modals, etc.
+*/
 /* Interactive UI elements */
 /* Active state */
 /* Inactive state */
+/* Status */
+/*
+$stateColors: (
+    info: (),
+    success: (),
+    error:()
+);*/
 /* TODO use PostCSS instead of this mixin */
 /* TODO animation, animation-delay */
 /* Typography */
@@ -14,10 +23,10 @@
   margin: 0.4em auto 0 auto;
   padding: 1em 0;
   font-size: 2em;
-  background-color: rgba(255, 128, 0, 0.75);
+  background-color: #440CE8;
   color: #000;
   border: none;
-  outline-color: #ffbd73;
+  outline-color: #816AFF;
   display: block;
   cursor: pointer;
   -webkit-transition: width .5s ease-out;
@@ -27,7 +36,7 @@
   width: 80%; }
 
 .btn:hover {
-  background-color: #ffbd73;
+  background-color: #816AFF;
   color: #fff;
   -webkit-transition: width .5s ease-out;
   -moz-transition: width .5s ease-out;
@@ -70,14 +79,14 @@ textarea {
   display: block;
   outline-width: 0;
   border: none;
-  color: rgba(255, 128, 0, 0.75); }
+  color: #440CE8; }
 
 .form-field:focus {
   outline-style: solid;
   outline-width: 0.3em;
-  outline-color: #ffbd73;
+  outline-color: #816AFF;
   border: none;
-  color: #ffbd73; }
+  color: #816AFF; }
 
 .form-field::-webkit-input-placeholder {
   /* WebKit browsers */
@@ -119,6 +128,7 @@ textarea {
 .modal-content {
   z-index: 40;
   text-align: center;
+  color: #000;
   background-color: #fff; }
 
 .modal-col {
@@ -126,6 +136,22 @@ textarea {
   width: calc(100%*2/3);
   margin-left: calc(100%/6); }
 
+.alert {
+  border-size: 3px;
+  border-style: solid;
+  border-radius: 0; }
+
+.alert-sleeping {
+  display: none; }
+
+/*
+@each $state in $stateColors {
+    .alert-state {
+        border-color: ;
+        background-color: ;
+    }
+}
+*/
 /*
 grid                   
 */
@@ -148,7 +174,7 @@ grid
   width: calc(100%/5); }
 
 ::selection {
-  background-color: #0080ff;
+  background-color: #000;
   color: #fff; }
 
 html, body {
@@ -157,7 +183,7 @@ html, body {
   height: 100%; }
 
 body {
-  color: #0080ff;
+  color: #fff;
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background: #222 url("../images/shield_logo_4.png") no-repeat fixed center;
   background-size: 50% auto; }
@@ -175,9 +201,6 @@ h1, h2, h3 {
 div, nav {
   border-radius: 0; }
 
-.sleeping-alert {
-  display: none; }
-
 .text-left {
   text-align: left; }
 
@@ -191,7 +214,7 @@ div, nav {
   background-image: url("../images/josh4.jpg");
   background-repeat: no-repeat;
   background-position: center;
-  border: 0.3em solid #0080ff;
+  border: 0.3em solid #000;
   background-size: 150%;
   width: 15em;
   height: 15em;
@@ -200,10 +223,10 @@ div, nav {
 
 a {
   text-decoration: none;
-  color: rgba(255, 128, 0, 0.75); }
+  color: #440CE8; }
 
 a:hover {
-  color: #ffbd73; }
+  color: #816AFF; }
 
 .img-link-wrap {
   margin: 2em 1em 1em 1em;
@@ -287,7 +310,7 @@ a:hover {
     display: block;
     page-break-after: avoid; }
 
-  #main, #modals {
+  #modals {
     display: none; }
 
   html {
@@ -297,7 +320,7 @@ a:hover {
     margin: 0;
     page-break-after: avoid; }
 
-  body, p, div, h1, h2, h3, #main, #modals, footer {
+  body, p, div, h1, h2, h3, #modals, footer {
     /* -webkit-filter:grayscale(1); */
     color: #000;
     margin: 0;

@@ -1,18 +1,43 @@
-/* Base layer */
+/* Simple base shades */
+$color-bright: #fff;
+$color-dark: #000;
 $color-bg-main: #222;
 $color-placeholder: #555;
 
-/* Overlaid or covering elements */
+/*
+Overlaid or covering elements
+E.g. popovers, modals, etc.
+*/
+$color-text-overlay: #000;
 $color-bg-overlay: #fff;
-$transparent-white: rgba(255, 255, 255, 0.75);
-
-/* Static UI elements */
-$color-static: #0080ff;
+$color-transparent-overlay: rgba(255, 255, 255, 0.75);
 
 /* Interactive UI elements */
 /* Active state */
-$color-active-text: #fff;
-$color-active: #ffbd73;
+$color-active: #816AFF;
+
 /* Inactive state */
-$color-inactive-text: #000;
-$color-inactive: rgba(255, 128, 0, 0.75);
+$color-inactive: #440CE8;
+
+/* Status */
+// Info
+$color-bg-info: #50FFDD;
+$color-border-info: #2EF9F9;
+
+// Success
+$color-bg-success: #80FF56;
+$color-border-success: #35FF00;
+
+// Warning
+// not currently used
+
+// Error
+$color-bg-error: #FF413F;
+$color-border-error: #FF0600;
+
+/*
+$stateColors: (
+    info: (),
+    success: (),
+    error:()
+);*/

@@ -11,7 +11,7 @@
     position: absolute;
     width: inherit;
     height: inherit;
-    background: $transparent-white;
+    background: $color-transparent-overlay;
     margin: 0 auto;
 }
 .modal-front {
@@ -22,6 +22,7 @@
 .modal-content {
     z-index: 40;
     text-align: center;
+    color: $color-text-overlay;
     background-color: $color-bg-overlay;
 }
 .modal-col {

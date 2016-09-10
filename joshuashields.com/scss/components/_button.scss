@@ -5,7 +5,7 @@
     padding: 1em 0;
     font-size: 2em;
     background-color: $color-inactive;
-    color: $color-inactive-text;
+    color: $color-dark;
     border: none;
     outline-color: $color-active;
     display: block;
@@ -18,7 +18,7 @@
 }
 .btn:hover {
     background-color: $color-active;
-    color: $color-active-text;
+    color: $color-bright;
     -webkit-transition: width .5s ease-out;
     -moz-transition: width .5s ease-out;
     -o-transition: width .5s ease-out;

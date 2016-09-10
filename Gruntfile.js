@@ -14,11 +14,22 @@ module.exports = function(grunt) {
                 }
             }
         },
+        // SCSS Linting
+        stylelint: {
+            scss: {
+                files: [{
+                    expand: true,
+                    cwd: 'joshuashields.com/scss',
+                    src: ['**']
+                }]
+            }
+        },
         // Sass Task for SCSS
         sass: {
-            // Target
             dist: {
-                // Files
+                options: {
+                    style: 'expanded'
+                },
                 files: [{
                     expand: true,
                     flatten: true,
@@ -43,10 +54,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-stylelint');
 
     // Default task(s).
-    grunt.registerTask('default', ['jshint', 'sass']);
+    grunt.registerTask('default', ['jshint', 'stylelint', 'sass']);
 
-    grunt.registerTask('all', ['jshint', 'sass', 'copy']);
+    grunt.registerTask('deploy', ['jshint', 'stylelint', 'sass', 'copy']);
 
 };

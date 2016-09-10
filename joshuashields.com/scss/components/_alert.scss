@@ -1,0 +1,18 @@
+.alert {
+    border-size: 3px;
+    border-style: solid;
+    border-radius: 0;
+}
+
+.alert-sleeping {
+    display: none;
+}
+
+/*
+@each $state in $stateColors {
+    .alert-#{state} {
+        border-color: ;
+        background-color: ;
+    }
+}
+*/

@@ -5,12 +5,13 @@
 @import 'components/button';
 @import 'components/form';
 @import 'components/modal';
+@import 'components/alert';
 
 @import 'layout/grid';
 
 ::selection {
-    background-color: $color-static;
-    color: $color-bg-overlay;
+    background-color: $color-dark;
+    color: $color-bright;
 }
 
 html, body {
@@ -19,7 +20,7 @@ html, body {
     height: 100%;
 }
 body {
-    color: $color-static;
+    color: $color-bright;
     font-family: $font-stack;
     background: $color-bg-main url($logo_shape) no-repeat fixed center;
     background-size: 50% auto;
@@ -39,9 +40,6 @@ div, nav {
     border-radius: 0;
 }
 
-.sleeping-alert {
-    display: none;
-}
 .text-left {
   text-align: left;
 }
@@ -56,7 +54,7 @@ div, nav {
     background-image: url($headshot);
     background-repeat: no-repeat;
     background-position: center;
-    border: 0.3em solid $color-static;
+    border: 0.3em solid $color-dark;
     background-size: 150%;
     width: 15em;
     height: 15em;
@@ -162,7 +160,7 @@ a:hover {
         display: block;
         page-break-after: avoid;
     }
-    #main, #modals {
+    #modals {
         display: none;
     }
     html {
@@ -172,9 +170,9 @@ a:hover {
         margin: 0;
         page-break-after: avoid;
     }
-    body, p, div, h1, h2, h3, #main, #modals, footer {
+    body, p, div, h1, h2, h3, #modals, footer {
         /* -webkit-filter:grayscale(1); */
-        color: $color-inactive-text;
+        color: $color-dark;
         margin: 0;
         padding: 0;
     }

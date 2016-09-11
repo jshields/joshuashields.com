@@ -1,18 +1,60 @@
-.alert {
-    border-size: 3px;
-    border-style: solid;
-    border-radius: 0;
-}
-
 .alert-sleeping {
     display: none;
 }
 
+.alert {
+    position: relative;
+    padding: 1em;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 0;
+}
+
+// TODO encapsulate dismiss and state icons with before/after or a template
+.alert .icon {
+    position: absolute;
+    // TODO bigger font, centered
+}
+.alert-state-icon {
+    left: 5%;
+}
+.alert-dismiss {
+    right: 5%;
+    cursor: pointer;
+}
+.alert-message {
+    display: inline-block;
+    width: 80%;
+}
+
+// Info
+.alert-info {
+    border-color: $color-accent-info;
+    background-color: $color-body-info;
+}
+.alert-info .icon {
+    color: $color-accent-info;
+}
+
+// Error
+.alert-error {
+    border-color: $color-accent-error;
+    background-color: $color-body-error;
+}
+.alert-error .icon {
+    color: $color-accent-error;
+}
+
+
 /*
+TODO
 @each $state in $stateColors {
     .alert-#{state} {
         border-color: ;
         background-color: ;
+    }
+    .alert-#{state} .icon {
+        
     }
 }
 */

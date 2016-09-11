@@ -13,8 +13,9 @@
 	<meta property="og:description" content="Joshua Shields' personal site." />
 	<meta property="og:type" content="website" />
 	<meta property="og:image" content="http://www.joshuashields.com/images/shield_logo_4.png" />
-	<meta name="theme-color" content="#222">
+	<meta name="theme-color" content="#111">
 	<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto' type='text/css' />
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
 	<link rel="stylesheet" href="css/main.css" type="text/css" />
 	<link rel="shortcut icon" href="http://www.joshuashields.com/favicon.ico?v=1" type="image/x-icon" />
 	<link rel="icon" href="http://www.joshuashields.com/favicon.ico?v=1" type="image/x-icon" />
@@ -52,7 +53,14 @@
 							<li>Websites, web applications, &amp; Content Management Systems (CMS).
 								<ul>
 									<li>Semantic HTML, CSS with SASS, &amp; responsive design.</li>
-									<li>JavaScript, jQuery, AngularJS, &amp; AJAX.</li>
+                                    <li>i18n (Internationalization) and a11y (Accessibility)</li>
+									<li>JavaScript
+                                        <ul>
+                                            <li>Libraries and frameworks like React, Angular, Knockout, jQuery and Lodash</li>
+                                            <li>CommonJS API and modules</li>
+                                            <li>AJAX, REST APIs</li>
+                                        </ul>
+                                    </li>
 									<li>Django, Flask, ASP.NET, Ruby on Rails, Spring MVC, &amp; PHP.</li>
 									<li>WordPress, Joomla!, &amp; Drupal.</li>
 								</ul>
@@ -98,6 +106,25 @@
 				<h2 id="phone-number">call me at <a href="tel:5033301909">(503) 330-1909</a></h2>
 					<form id="contact-form" method="post" action="contact.php">
 						<div class="modal-col">
+                            <div class="contact-alerts">
+                                <?php
+                                    session_start();
+                                    if ($_SESSION['cf_return']) {
+                                        echo $_SESSION['cf_return'];
+                                    }
+                                    session_unset();
+                                    session_destroy(); 
+                                ?>
+                                <div id="contact-validation-alert" class="alert alert-error alert-sleeping">
+                                </div>
+                                <div class="alert alert-info">
+                                    <i class="icon alert-state-icon fa fa-info-circle" aria-hidden="true"></i>
+                                    <div class="alert-message">
+                                        This message will be sent to <a href="mailto:josh@joshuashields.com">josh@joshuashields.com</a>.
+                                    </div>
+                                    <i class="alert-dismiss icon fa fa-close" aria-hidden="true"></i>
+                                </div>
+                            </div>
 					    	<label for="email" class="form-label">email address
 						    	<input id="email" name="email" type="email" class="form-field" placeholder="foo@example.com" />
 							</label>
@@ -108,18 +135,6 @@
 								<textarea id="message" name="message" class="form-field" rows="3" placeholder="Hey Josh! ..." spellcheck="true"></textarea>
 							</label>
 						</div>
-						<?php
-							session_start();
-							if ($_SESSION['cf_return']) {
-								echo $_SESSION['cf_return'];
-							}
-						?>
-						<div id="alert alert-info">
-                            This message will be sent to <a href="mailto:josh@joshuashields.com">josh@joshuashields.com</a>.
-                        </div>
-						<div class="alert alert-error alert-sleeping">
-                            Message not sent. There doesn't seem to be anything written.
-                        </div>
 						<!-- not using type submit to avoid forced styling by certain browsers -->
 						<input id="btn-submit" type="button" class="btn" value="submit" />
 					</form>
@@ -149,7 +164,7 @@
 	<a id="btn-about-modal" href="#about-modal" class="btn btn-modal wall-link">about</a>
 	<a id="btn-contact-modal" href="#contact-modal" class="btn btn-modal wall-link">contact</a>
 	<a id="btn-resume" target="_blank" rel="noopener noreferrer" href="https://docs.google.com/document/d/14nzUhhEC5qtAnwvid-yeuFz6cZIF89zFjFziiEB_NrU/edit?usp=sharing" class="btn btn-link wall-link"><!--
-    -->r&eacute;sum&eacute; <img src="images/black_rightpointing_triangle.png" alt="&#9654;" /><!--
+    -->r&eacute;sum&eacute; <i class="icon fa fa-external-link" aria-hidden="true"></i><!--
     --></a>
 </section>
 <footer>

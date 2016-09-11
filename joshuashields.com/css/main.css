@@ -185,9 +185,12 @@ textarea {
   border-radius: 0;
 }
 
-.alert-message {
-  display: inline-block;
-  width: 80%;
+.alert .icon {
+  position: absolute;
+}
+
+.alert-state-icon {
+  left: 5%;
 }
 
 .alert-dismiss {
@@ -195,8 +198,9 @@ textarea {
   cursor: pointer;
 }
 
-.alert-state-icon {
-  left: 5%;
+.alert-message {
+  display: inline-block;
+  width: 80%;
 }
 
 .alert-info {
@@ -205,7 +209,6 @@ textarea {
 }
 
 .alert-info .icon {
-  position: absolute;
   color: #339999;
 }
 
@@ -215,7 +218,6 @@ textarea {
 }
 
 .alert-error .icon {
-  position: absolute;
   color: #993333;
 }
 

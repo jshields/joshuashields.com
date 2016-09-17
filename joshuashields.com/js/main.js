@@ -87,6 +87,7 @@
         });
 
         // key commands
+        // TODO tabindex -1 in modal for a11y
         $(document).keydown(function(ev) {
             //esc key (closes modal)
             if (ev.keyCode === 27) {

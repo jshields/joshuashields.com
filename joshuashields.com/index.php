@@ -135,8 +135,7 @@
 								<textarea id="message" name="message" class="form-field" rows="3" placeholder="Hey Josh! ..." spellcheck="true"></textarea>
 							</label>
 						</div>
-						<!-- not using type submit to avoid forced styling by certain browsers -->
-						<input id="btn-submit" type="button" class="btn" value="submit" />
+						<input id="btn-submit" type="submit" class="btn" value="submit" />
 					</form>
 					<button class="btn btn-close">cancel</button>
 				</div>

@@ -6,4 +6,4 @@ Website of Joshua Shields.
 
 ``npm install``
 
-``grunt all``
+``grunt``

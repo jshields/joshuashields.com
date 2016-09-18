@@ -3,4 +3,7 @@
 error_log
 node_modules
 lib
+font-awesome.*
+FontAwesome.*
+fontawesome-webfont.*
 contact.php

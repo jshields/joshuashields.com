@@ -10,7 +10,7 @@ module.exports = function(grunt) {
                     ignores: ['node_modules/**']
                 },
                 files: {
-                    src: ['Gruntfile.js', '**/js/*.js']
+                    src: ['Gruntfile.js', 'stylelint.config.js', '**/js/*.js']
                 }
             }
         },
@@ -43,22 +43,42 @@ module.exports = function(grunt) {
         // Copy files to where they need to be
         copy: {
             dist: {
-                expand: true,
-                flatten: true,
-                src: 'node_modules/jquery/dist/*',
-                dest: 'joshuashields.com/js/lib/',
-            },
+                files: [
+                    // jQuery
+                    {
+                        expand: true,
+                        flatten: true,
+                        src: 'node_modules/jquery/dist/*',
+                        dest: 'joshuashields.com/js/lib/',
+                    },
+                    // Font Awesome
+                    {
+                        expand: true,
+                        flatten: true,
+                        src: 'node_modules/font-awesome/css/*',
+                        dest: 'joshuashields.com/css/'
+                    },
+                    {
+                        expand: true,
+                        flatten: true,
+                        src: 'node_modules/font-awesome/fonts/*',
+                        dest: 'joshuashields.com/fonts/'
+                    }
+                ]
+            }
         },
     });
 
+    // Load tasks from node modules
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-stylelint');
 
-    // Default task(s).
+    // Tasks
     grunt.registerTask('default', ['jshint', 'stylelint', 'sass']);
 
+    grunt.registerTask('lint', ['jshint', 'stylelint']);
     grunt.registerTask('deploy', ['jshint', 'stylelint', 'sass', 'copy']);
 
 };

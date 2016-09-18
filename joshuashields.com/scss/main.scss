@@ -41,7 +41,7 @@ div, nav {
 }
 
 .text-left {
-  text-align: left;
+    text-align: left;
 }
 .list {
     margin: 0;
@@ -140,14 +140,14 @@ a:hover {
 
 /* Contact media */
 #phone-number {
-  display: none;
+    display: none;
 }
 @media screen and (max-width: 512px) {
     #phone-number {
-      display: block;
+        display: block;
     }
     #social-media-icons .icons-wrap {
-      display: block;
+        display: block;
     }
 }
 

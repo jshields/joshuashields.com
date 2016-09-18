@@ -22,9 +22,7 @@ textarea {
     color: $color-inactive;
 }
 .form-field:focus {
-    outline-style: solid;
-    outline-width: 0.3em;
-    outline-color: $color-active;
+    @extend %outline;
     border: none;
     color: $color-active; 
 }

@@ -179,7 +179,10 @@ textarea {
 
 .alert {
   position: relative;
+  margin: 0 0 1em 0;
   padding: 1em;
+  font-size: 1em;
+  line-height: 2em;
   border-width: 3px;
   border-style: solid;
   border-radius: 0;
@@ -187,6 +190,10 @@ textarea {
 
 .alert .icon {
   position: absolute;
+  font-size: 2em;
+  line-height: 2em;
+  top: 0;
+  bottom: 0;
 }
 
 .alert-state-icon {
@@ -210,6 +217,15 @@ textarea {
 
 .alert-info .icon {
   color: #339999;
+}
+
+.alert-success {
+  border-color: #339933;
+  background-color: #8cd98c;
+}
+
+.alert-success .icon {
+  color: #339933;
 }
 
 .alert-error {

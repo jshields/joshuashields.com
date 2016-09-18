@@ -4,7 +4,10 @@
 
 .alert {
     position: relative;
+    margin: 0 0 1em 0;
     padding: 1em;
+    font-size: 1em;
+    line-height: 2em;
     border-width: 3px;
     border-style: solid;
     border-radius: 0;
@@ -13,7 +16,10 @@
 // TODO encapsulate dismiss and state icons with before/after or a template
 .alert .icon {
     position: absolute;
-    // TODO bigger font, centered
+    font-size: 2em;
+    line-height: 2em;
+    top: 0;
+    bottom: 0;
 }
 .alert-state-icon {
     left: 5%;

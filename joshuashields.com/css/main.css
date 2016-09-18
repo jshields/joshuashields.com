@@ -42,13 +42,11 @@ $stateColors: (
   outline-color: #d98cd9;
   display: block;
   cursor: pointer;
-  width: 80%;
   -webkit-transition: width 0.5s ease-out;
   -moz-transition: width 0.5s ease-out;
   -o-transition: width 0.5s ease-out;
   transition: width 0.5s ease-out;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  width: 80%;
 }
 
 .btn:hover {
@@ -219,6 +217,15 @@ textarea {
 
 .alert-info .icon {
   color: #339999;
+}
+
+.alert-success {
+  border-color: #339933;
+  background-color: #8cd98c;
+}
+
+.alert-success .icon {
+  color: #339933;
 }
 
 .alert-error {

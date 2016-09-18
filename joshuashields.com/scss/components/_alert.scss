@@ -42,6 +42,15 @@
     color: $color-accent-info;
 }
 
+// Success
+.alert-success {
+    border-color: $color-accent-success;
+    background-color: $color-body-success;
+}
+.alert-success .icon {
+    color: $color-accent-success;
+}
+
 // Error
 .alert-error {
     border-color: $color-accent-error;

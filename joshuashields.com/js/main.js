@@ -1,15 +1,27 @@
 (function($) {
+    'use strict';
 
-    // consider refactoring modals and alerts into one "dismissible overlay" class
+    var KEYS = {
+        tab: 9,
+        shift: 16,
+        esc: 27,
+    };
+    // consider refactoring modals and alerts into one class
     var modal = {
-        'initDelay': 500,
-        'fadeTime': 500,
-        'active': false,
-        'content': null,
-        'set': function(content) {
+        initDelay: 500,
+        fadeTime: 500,
+        active: false,
+        content: null,
+        set: function(content) {
             // falsey content means no modal
             this.active = !content ? false : true;
             this.content = content;
+            // TODO
+            //this.name = content.data('modal-name');
+        },
+        close: function() {
+            this.set(null);
+            $('.modal').fadeOut(this.fadeTime);
         }
     };
     var alert = {
@@ -42,68 +54,106 @@
 
     $(document).ready(function() {
 
-        /*
-        Alerts
-        */
-        $('.alert').on('click', '.alert-dismiss', function(ev) {
-            $(this).closest('.alert').fadeOut(alert.fadeTime, function() {
-                $(this).addClass(alert.dismissClass);
+        (function initModals() {
+            $('.modal').attr({
+                tabIndex: -1,
+                role: 'dialog'
             });
-        });
+        })();
 
-        /*
-        Modals
-        */
-        $('.img-link-wrap a, .wall-link').click(function(ev) {
-            // make sure we can't click anything behind the modal
-            if (modal.active === true) {
-                ev.preventDefault();
-            }
-        });
         // Check for a modal specified by the fragment identifier
-        if (window.location.hash) {
-            modal.set($(window.location.hash).find('.modal-content'));
-            $(window.location.hash).delay(modal.initDelay).fadeIn(modal.fadeTime, function() {
+        var frag = window.location.hash;
+        if (frag) {
+            modal.set($(frag).find('.modal-content'));
+            $(frag).delay(modal.initDelay).fadeIn(modal.fadeTime, function() {
                 $('html, body').scrollTop($(modal.content).offset().top);
             });
         }
-        // Open modal
-        $('.btn-modal').click(function(ev) {
-            if (modal.active === false) {
-                ev.preventDefault();
-                $('.modal').fadeOut(modal.fadeTime);
-                modal.set($($(this).attr('href')).find('.modal-content'));
-                $($(this).attr('href')).fadeIn(modal.fadeTime, function() {
-                    $("html, body").scrollTop($(modal.content).offset().top);
+
+        var handleClick = function(ev) {
+            if ($(ev.target).is('.modal')) {
+
+                return;
+            }
+            if ($(ev.target).is('.btn-modal')) {
+                if (modal.active === false) {
+                    ev.preventDefault();
+                    // shouldn't be needed: $('.modal').fadeOut(modal.fadeTime);
+                    // set modal content and active
+                    modal.set($($(this).attr('href')).find('.modal-content'));
+                    // fade in the modal
+                    $($(this).attr('href')).fadeIn(modal.fadeTime, function() {
+                        // scroll to modal content
+                        $("html, body").scrollTop($(modal.content).offset().top);
+                    });
+                }
+                return;
+            }
+            if ($(ev.target).is('.alert-dismiss')) {
+                //var thisAlert = $(ev.target).closest('.alert');
+                $(ev.target).closest('.alert').fadeOut(alert.fadeTime, function() {
+                    // TODO retest this
+                    $(this).addClass(alert.dismissClass);
                 });
+                return;
             }
-        });
-        // Close modal
-        $(document).click(function(event) {
-            if ($(event.target).is('.modal-front, .modal-back, .btn-close')) {
-                modal.set(null);
-                $('.modal').fadeOut(modal.fadeTime);
+            if ($(ev.target).is('.img-link-wrap a, .wall-link')) {
+                // Make sure we can't click anything behind the modal
+                if (modal.active === true) {
+                    ev.preventDefault();
+                }
+                return;
             }
-        });
+            if ($(ev.target).is('.modal-front, .modal-back, .btn-close')) {
+                modal.close();
+                return;
+            }
+            if ($(ev.target).is('#btn-submit')) {
+                ev.preventDefault();
+                if (validate() === true) {
+                    $('#contact-form').submit();
+                }
+                return;
+            }
+            if ($(ev.target).is('#btn-resume')) {
+                ga('send', 'event', 'button', 'click', 'resume-click');
+                return;
+            }
 
-        // key commands
-        // TODO tabindex -1 in modal for a11y
-        $(document).keydown(function(ev) {
-            //esc key (closes modal)
-            if (ev.keyCode === 27) {
-                modal.set(null);
-                $('.modal').fadeOut(modal.fadeTime);
+        };
+        // TODO test this
+        var handleKeydown = function(ev) {
+            if ($(ev.target).closest('.modal').length) {
+                // TODO
+                var thisModal = $(ev.target);
+                // Prevent tabbing out of dialogs
+                //ev.which !== $.ui.keyCode.TAB ||
+                if (ev.isDefaultPrevented()) {
+                    return;
+                }
+                if (ev.which === $.ui.keyCode.TAB) {
+                    var tabbables = thisModal.find(':tabbable'),
+                        first = tabbables.filter(':first'),
+                        last = tabbables.filter(':last');
+                    if ((ev.target === last[0] || ev.target === thisModal[0]) && !ev.shiftKey) {
+                        first.trigger('focus');
+                        //first.focus();
+                        ev.preventDefault();
+                    } else if ((ev.target === first[0] || ev.target === thisModal[0] ) && ev.shiftKey ) {
+                        last.trigger('focus');
+                        ev.preventDefault();
+                    }
+                }
             }
-        });
 
-        // submissions
-        $('#btn-submit').click(function(ev) {
-            ev.preventDefault();
-            if (validate() === true)
-                $('form:first').submit();
-        });
-        $('#btn-resume').click(function() {
-            ga('send', 'event', 'button', 'click', 'resume-click');
+            if (ev.which === $.ui.keyCode.ESCAPE) {
+                modal.close();
+            }
+
+        };
+        $(document).on({
+            'click': handleClick,
+            'keydown': handleKeydown
         });
     });
 })(jQuery);

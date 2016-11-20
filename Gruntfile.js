@@ -7,7 +7,8 @@ module.exports = function(grunt) {
         jshint: {
             hint: {
                 options: {
-                    ignores: ['node_modules/**']
+                    ignores: ['node_modules/**'],
+                    globals: {'document': false, 'window': false, 'jQuery': true, 'ga': true}
                 },
                 files: {
                     src: ['Gruntfile.js', 'stylelint.config.js', '**/js/*.js']

@@ -9,7 +9,7 @@ Website of Joshua Shields.
 ``grunt``
 
 
-### jQuery UI custom dependency:
+### [jQuery UI custom dependency:](http://jqueryui.com/download/#!version=1.12.1&components=001010011110000000000000000000000000000000000000)
 * :data Selector
 * :focusable Selector
 * Keycode

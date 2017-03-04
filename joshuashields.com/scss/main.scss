@@ -14,6 +14,11 @@
     color: $color-bright;
 }
 
+*:focus {
+    // is this bad to override the browser default here?
+    @extend %outline;
+}
+
 html, body {
     margin: 0;
     width: 100%;
@@ -40,6 +45,16 @@ div, nav {
     border-radius: 0;
 }
 
+a {
+    text-decoration: none;
+    color: $color-inactive;
+    font-style: initial;
+
+    &:hover {
+        color: $color-active;
+    }
+}
+
 .text-left {
     text-align: left;
 }
@@ -60,14 +75,6 @@ div, nav {
     height: 15em;
     margin-left: 1em;
     float: right;
-}
-
-a {
-    text-decoration: none;
-    color: $color-inactive;
-}
-a:hover {
-    color: $color-active;
 }
 
 .img-link-wrap {

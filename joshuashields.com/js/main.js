@@ -81,6 +81,7 @@
                     $(modalId).fadeIn(modal.fadeTime, function() {
                         // scroll to modal content
                         $('html, body').scrollTop($(modal.content).offset().top);
+                        $(this).focus();
                     });
                 }
                 return;
@@ -117,24 +118,22 @@
             }
 
         };
-        // TODO test this
+
         var handleKeydown = function(ev) {
             var thisModal = $(ev.target).closest('.modal');
             if (thisModal.length) {
-                // TODO
-
-                // Prevent tabbing out of dialogs
-                //ev.which !== $.ui.keyCode.TAB ||
+                // Loop tabbing while inside a dialog for a11y and UX
                 if (ev.isDefaultPrevented()) {
                     return;
                 }
                 if (ev.which === $.ui.keyCode.TAB) {
+                    // tabbable selector comes from jQuery UI
+                    // TODO make "X" icons of alerts tabbable/focusable
                     var tabbables = thisModal.find(':tabbable'),
                         first = tabbables.filter(':first'),
                         last = tabbables.filter(':last');
                     if ((ev.target === last[0] || ev.target === thisModal[0]) && !ev.shiftKey) {
                         first.trigger('focus');
-                        //first.focus();
                         ev.preventDefault();
                     } else if ((ev.target === first[0] || ev.target === thisModal[0] ) && ev.shiftKey ) {
                         last.trigger('focus');
@@ -146,8 +145,8 @@
             if (ev.which === $.ui.keyCode.ESCAPE) {
                 modal.close();
             }
-
         };
+
         $(document).on({
             'click': handleClick,
             'keydown': handleKeydown

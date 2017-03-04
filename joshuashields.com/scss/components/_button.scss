@@ -1,5 +1,5 @@
 .btn {
-    @extend %outline;
+
     text-decoration: none;
     text-align: center;
     vertical-align: middle;
@@ -18,16 +18,18 @@
     transition: width 0.5s ease-out;
     -webkit-appearance: none;
     -moz-appearance: none;
+
+    &:hover {
+        background-color: $color-active;
+        color: $color-dark;
+        -webkit-transition: width 0.5s ease-out;
+        -moz-transition: width 0.5s ease-out;
+        -o-transition: width 0.5s ease-out;
+        transition: width 0.5s ease-out;
+        width: 95%;
+    }
 }
-.btn:hover {
-    background-color: $color-active;
-    color: $color-dark;
-    -webkit-transition: width 0.5s ease-out;
-    -moz-transition: width 0.5s ease-out;
-    -o-transition: width 0.5s ease-out;
-    transition: width 0.5s ease-out;
-    width: 95%;
-}
+
 
 .btn .icon {
     vertical-align: middle;

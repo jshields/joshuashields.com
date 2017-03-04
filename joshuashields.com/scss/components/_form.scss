@@ -17,15 +17,14 @@ textarea {
     margin: 0.5em auto;
     width: 50%;
     display: block;
-    outline-width: 0;
     border: none;
     color: $color-inactive;
+
+    &:focus {
+        color: $color-active; 
+    }
 }
-.form-field:focus {
-    @extend %outline;
-    border: none;
-    color: $color-active; 
-}
+
 .form-field::-webkit-input-placeholder { /* WebKit browsers */
     color: $color-placeholder;
 }

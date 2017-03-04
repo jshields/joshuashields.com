@@ -1,4 +1,5 @@
 .btn {
+
     text-decoration: none;
     text-align: center;
     vertical-align: middle;
@@ -8,24 +9,27 @@
     background-color: $color-inactive;
     color: $color-bright;
     border: none;
-    outline-color: $color-active;
     display: block;
     cursor: pointer;
-    -webkit-transition: width 0.5s ease-out;
-    -moz-transition: width 0.5s ease-out;
-    -o-transition: width 0.5s ease-out;
-    transition: width 0.5s ease-out;
     width: 80%;
-}
-.btn:hover {
-    background-color: $color-active;
-    color: $color-dark;
     -webkit-transition: width 0.5s ease-out;
     -moz-transition: width 0.5s ease-out;
     -o-transition: width 0.5s ease-out;
     transition: width 0.5s ease-out;
-    width: 95%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    &:hover {
+        background-color: $color-active;
+        color: $color-dark;
+        -webkit-transition: width 0.5s ease-out;
+        -moz-transition: width 0.5s ease-out;
+        -o-transition: width 0.5s ease-out;
+        transition: width 0.5s ease-out;
+        width: 95%;
+    }
 }
+
 
 .btn .icon {
     vertical-align: middle;

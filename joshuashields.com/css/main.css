@@ -27,6 +27,11 @@ $stateColors: (
 */
 /* TODO use PostCSS instead of this mixin */
 /* TODO animation, animation-delay */
+*:focus {
+  outline-style: solid;
+  outline-color: #d9d98c;
+}
+
 /* Typography */
 /* Images */
 .btn {
@@ -39,16 +44,16 @@ $stateColors: (
   background-color: #732673;
   color: #eee;
   border: none;
-  outline-color: #d98cd9;
   display: block;
   cursor: pointer;
+  width: 80%;
   -webkit-transition: width 0.5s ease-out;
   -moz-transition: width 0.5s ease-out;
   -o-transition: width 0.5s ease-out;
   transition: width 0.5s ease-out;
-  width: 80%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
-
 .btn:hover {
   background-color: #d98cd9;
   color: #111;
@@ -103,16 +108,10 @@ textarea {
   margin: 0.5em auto;
   width: 50%;
   display: block;
-  outline-width: 0;
   border: none;
   color: #732673;
 }
-
 .form-field:focus {
-  outline-style: solid;
-  outline-width: 0.3em;
-  outline-color: #d98cd9;
-  border: none;
   color: #d98cd9;
 }
 
@@ -306,6 +305,15 @@ div, nav {
   border-radius: 0;
 }
 
+a {
+  text-decoration: none;
+  color: #732673;
+  font-style: initial;
+}
+a:hover {
+  color: #d98cd9;
+}
+
 .text-left {
   text-align: left;
 }
@@ -328,15 +336,6 @@ div, nav {
   height: 15em;
   margin-left: 1em;
   float: right;
-}
-
-a {
-  text-decoration: none;
-  color: #732673;
-}
-
-a:hover {
-  color: #d98cd9;
 }
 
 .img-link-wrap {

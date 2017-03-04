@@ -71,20 +71,16 @@
         }
 
         var handleClick = function(ev) {
-            if ($(ev.target).is('.modal')) {
-
-                return;
-            }
             if ($(ev.target).is('.btn-modal')) {
                 if (modal.active === false) {
                     ev.preventDefault();
-                    // shouldn't be needed: $('.modal').fadeOut(modal.fadeTime);
+                    var modalId = $(ev.target).attr('href');
                     // set modal content and active
-                    modal.set($($(this).attr('href')).find('.modal-content'));
+                    modal.set($(modalId).find('.modal-content'));
                     // fade in the modal
-                    $($(this).attr('href')).fadeIn(modal.fadeTime, function() {
+                    $(modalId).fadeIn(modal.fadeTime, function() {
                         // scroll to modal content
-                        $("html, body").scrollTop($(modal.content).offset().top);
+                        $('html, body').scrollTop($(modal.content).offset().top);
                     });
                 }
                 return;
@@ -123,9 +119,10 @@
         };
         // TODO test this
         var handleKeydown = function(ev) {
-            if ($(ev.target).closest('.modal').length) {
+            var thisModal = $(ev.target).closest('.modal');
+            if (thisModal.length) {
                 // TODO
-                var thisModal = $(ev.target);
+
                 // Prevent tabbing out of dialogs
                 //ev.which !== $.ui.keyCode.TAB ||
                 if (ev.isDefaultPrevented()) {

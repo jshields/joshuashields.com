@@ -3,9 +3,7 @@
 @import 'helpers/variables';
 
 @import 'components/button';
-@import 'components/form';
 @import 'components/modal';
-@import 'components/alert';
 
 @import 'layout/grid';
 
@@ -115,7 +113,6 @@ a {
     100% {left: 0;}
 }
 
-/* TODO refactor media queries to be modular */
 @media screen and (max-width: 1024px) {
     #pro-pic {
         width: 8em;
@@ -145,14 +142,7 @@ a {
     }
 }
 
-/* Contact media */
-#phone-number {
-    display: none;
-}
 @media screen and (max-width: 512px) {
-    #phone-number {
-        display: block;
-    }
     #social-media-icons .icons-wrap {
         display: block;
     }

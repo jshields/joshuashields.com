@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-    	<meta name="robots" content="noindex">
-    	<title>404 Not Found</title>
+        <meta name="robots" content="noindex">
+        <title>404 Not Found</title>
     </head>
     <body>
-    	<h1>Error</h1>
-    	<h2>404 - Page not Found</h2>
-    	<h3>It doesn't look like I have a page with this name.</h3>
+        <h1>Error</h1>
+        <h2>404 - Page not Found</h2>
+        <h3>It doesn't look like I have a page with this name.</h3>
     </body>
 </html>

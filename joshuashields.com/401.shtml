@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-    	<meta name="robots" content="noindex">
-    	<title>401 Authorization Required</title>
+        <meta name="robots" content="noindex">
+        <title>401 Authorization Required</title>
     </head>
     <body>
         <h1>Error</h1>

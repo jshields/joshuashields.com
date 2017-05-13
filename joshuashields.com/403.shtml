@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-    	<meta name="robots" content="noindex">
-    	<title>403 Permission Denied</title>
+        <meta name="robots" content="noindex">
+        <title>403 Permission Denied</title>
     </head>
     <body>
         <h1>Error</h1>
         <h2>403 - Permission Denied</h2>
-        <h3>You do not have permission for this request.<!--#echo var="REQUEST_URI" --></h3>
+        <h3>You do not have permission for this request.</h3>
     </body>
 </html>

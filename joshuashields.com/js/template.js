@@ -1,5 +1,6 @@
 // TODO module.exports = {};
 
+// TODO use templates?
 var Template = {
     init: function(templateFile) {
         // initialize a template by template file

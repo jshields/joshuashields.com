@@ -6,8 +6,6 @@
     -o-#{$prop}: $val;
 }
 
-
-/* FIXME this yellow is too hard to see on a white modal background */
 %outline {
     outline-style: solid;
     outline-color: $color-outline;

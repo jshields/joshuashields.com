@@ -26,10 +26,9 @@ $stateColors: (
 );
 */
 /* TODO use PostCSS instead of this mixin */
-/* TODO animation, animation-delay */
 *:focus {
   outline-style: solid;
-  outline-color: #d9d98c;
+  outline-color: #1a80e6;
 }
 
 /* Typography */
@@ -87,54 +86,6 @@ $stateColors: (
     width: 80%;
   }
 }
-textarea {
-  text-align: left;
-  resize: vertical;
-  max-height: 20%;
-}
-
-.form-label {
-  margin: 0 0 0.1em 0;
-  display: block;
-  font-weight: bold;
-}
-
-.form-field {
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-align: center;
-  background-color: #111;
-  font-size: 1em;
-  padding: 0.5em;
-  margin: 0.5em auto;
-  width: 50%;
-  display: block;
-  border: none;
-  color: #732673;
-}
-.form-field:focus {
-  color: #d98cd9;
-}
-
-.form-field::-webkit-input-placeholder {
-  /* WebKit browsers */
-  color: #555;
-}
-
-.form-field:-moz-placeholder {
-  /* Mozilla Firefox 4 to 18 */
-  color: #555;
-}
-
-.form-field::-moz-placeholder {
-  /* Mozilla Firefox 19+ */
-  color: #555;
-}
-
-.form-field:-ms-input-placeholder {
-  /* Internet Explorer 10+ */
-  color: #555;
-}
-
 .modal {
   z-index: 10;
   width: 100%;
@@ -172,82 +123,6 @@ textarea {
   margin-left: calc(100%/6);
 }
 
-.alert-sleeping {
-  display: none;
-}
-
-.alert {
-  position: relative;
-  margin: 0 0 1em 0;
-  padding: 1em;
-  font-size: 1em;
-  line-height: 2em;
-  border-width: 3px;
-  border-style: solid;
-  border-radius: 0;
-}
-
-.alert .icon {
-  position: absolute;
-  font-size: 2em;
-  line-height: 2em;
-  top: 0;
-  bottom: 0;
-}
-
-.alert-state-icon {
-  left: 5%;
-}
-
-.alert-dismiss {
-  right: 5%;
-  cursor: pointer;
-}
-
-.alert-message {
-  display: inline-block;
-  width: 80%;
-}
-
-.alert-info {
-  border-color: #339999;
-  background-color: #8cd9d9;
-}
-
-.alert-info .icon {
-  color: #339999;
-}
-
-.alert-success {
-  border-color: #339933;
-  background-color: #8cd98c;
-}
-
-.alert-success .icon {
-  color: #339933;
-}
-
-.alert-error {
-  border-color: #993333;
-  background-color: #d98c8c;
-}
-
-.alert-error .icon {
-  color: #993333;
-}
-
-/*
-TODO
-@each $state in $stateColors {
-    .alert-state {
-        border-color: ;
-        background-color: ;
-    }
-    .alert-state .icon {
-        
-    }
-}
-*/
 /* Grid */
 .main-col {
   overflow: hidden;
@@ -386,7 +261,6 @@ a:hover {
     left: 0;
   }
 }
-/* TODO refactor media queries to be modular */
 @media screen and (max-width: 1024px) {
   #pro-pic {
     width: 8em;
@@ -419,16 +293,7 @@ a:hover {
     margin-left: 0;
   }
 }
-/* Contact media */
-#phone-number {
-  display: none;
-}
-
 @media screen and (max-width: 512px) {
-  #phone-number {
-    display: block;
-  }
-
   #social-media-icons .icons-wrap {
     display: block;
   }

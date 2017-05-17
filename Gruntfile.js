@@ -8,7 +8,12 @@ module.exports = function(grunt) {
             hint: {
                 options: {
                     ignores: ['node_modules/**'],
-                    globals: {'document': false, 'window': false, 'jQuery': true, 'ga': true}
+                    globals: {
+                        'document': false,
+                        'window': false,
+                        'jQuery': true,
+                        'ga': true
+                    }
                 },
                 files: {
                     src: ['Gruntfile.js', 'stylelint.config.js', '**/js/*.js']
@@ -20,7 +25,7 @@ module.exports = function(grunt) {
             scss: {
                 files: [{
                     expand: true,
-                    cwd: 'joshuashields.com/scss',
+                    cwd: 'scss',
                     src: ['**']
                 }]
             }
@@ -36,7 +41,7 @@ module.exports = function(grunt) {
                     flatten: true,
                     cwd: 'joshuashields.com',
                     src: ['scss/*.scss'],
-                    dest: 'joshuashields.com/css',
+                    dest: 'css',
                     ext: '.css'
                 }]
             }
@@ -50,20 +55,20 @@ module.exports = function(grunt) {
                         expand: true,
                         flatten: true,
                         src: 'node_modules/jquery/dist/*',
-                        dest: 'joshuashields.com/js/lib/',
+                        dest: 'js/lib/',
                     },
                     // Font Awesome
                     {
                         expand: true,
                         flatten: true,
                         src: 'node_modules/font-awesome/css/*',
-                        dest: 'joshuashields.com/css/'
+                        dest: 'css/'
                     },
                     {
                         expand: true,
                         flatten: true,
                         src: 'node_modules/font-awesome/fonts/*',
-                        dest: 'joshuashields.com/fonts/'
+                        dest: 'fonts/'
                     }
                 ]
             }

@@ -6,6 +6,7 @@
     -o-#{$prop}: $val;
 }
 
+/* FIXME outline width varies greatly between browsers */
 %outline {
     outline-style: solid;
     outline-color: $color-outline;

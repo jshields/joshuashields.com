@@ -2,6 +2,3 @@
 .htaccess
 error_log
 node_modules
-font-awesome.*
-FontAwesome.*
-fontawesome-webfont.*

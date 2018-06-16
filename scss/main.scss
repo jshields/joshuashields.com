@@ -39,6 +39,12 @@ h1, h2, h3, {
     display: block;
     font-weight: bold;
 }
+.heading {
+    font-size: 2.618em;
+}
+.subheading {
+    font-size: 1.618em;
+}
 div, nav {
     border-radius: 0;
 }
@@ -145,36 +151,5 @@ a {
 @media screen and (max-width: 512px) {
     #social-media-icons .icons-wrap {
         display: block;
-    }
-}
-
-/* Print media */
-#print-message {
-    display: none;
-}
-@media print {
-    #print-message {
-        display: block;
-        page-break-after: avoid;
-    }
-    #modals {
-        display: none;
-    }
-    html {
-        background: transparent;
-        height: 100%;
-        padding: 0;
-        margin: 0;
-        page-break-after: avoid;
-    }
-    body, p, div, h1, h2, h3, #modals, footer {
-        /* -webkit-filter:grayscale(1); */
-        color: $color-dark;
-        margin: 0;
-        padding: 0;
-    }
-    a {
-        color: $color-bg-main;
-        text-decoration: underline;
     }
 }

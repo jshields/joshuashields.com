@@ -4,16 +4,10 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         // JavaScript linting
-        jshint: {
-            hint: {
+        eslint: {
+            src: {
                 options: {
-                    ignores: ['node_modules/**'],
-                    globals: {
-                        'document': false,
-                        'window': false,
-                        'jQuery': true,
-                        'ga': true
-                    }
+                    //configFile:
                 },
                 files: {
                     src: ['Gruntfile.js', 'stylelint.config.js', '**/js/*.js']
@@ -22,7 +16,7 @@ module.exports = function(grunt) {
         },
         // SCSS Linting
         stylelint: {
-            scss: {
+            src: {
                 files: [{
                     expand: true,
                     cwd: 'scss',
@@ -39,7 +33,6 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     flatten: true,
-                    cwd: 'joshuashields.com',
                     src: ['scss/*.scss'],
                     dest: 'css',
                     ext: '.css'
@@ -76,15 +69,15 @@ module.exports = function(grunt) {
     });
 
     // Load tasks from node modules
-    grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-eslint');
     grunt.loadNpmTasks('grunt-stylelint');
 
     // Tasks
-    grunt.registerTask('default', ['jshint', 'stylelint', 'sass']);
+    grunt.registerTask('default', ['eslint', 'stylelint', 'sass']);
 
-    grunt.registerTask('lint', ['jshint', 'stylelint']);
-    grunt.registerTask('deploy', ['jshint', 'stylelint', 'sass', 'copy']);
+    grunt.registerTask('lint', ['eslint', 'stylelint']);
+    grunt.registerTask('deploy', ['eslint', 'stylelint', 'sass', 'copy']);
 
 };

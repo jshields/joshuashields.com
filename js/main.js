@@ -1,11 +1,6 @@
 (function($) {
     'use strict';
 
-    var KEYS = {
-        tab: 9,
-        shift: 16,
-        esc: 27,
-    };
     // consider refactoring modals
     var modal = {
         initDelay: 500,
@@ -72,7 +67,6 @@
             }
 
             if ($(ev.target).is('#btn-resume')) {
-                ga('send', 'event', 'button', 'click', 'resume-click');
                 return;
             }
 

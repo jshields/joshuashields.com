@@ -1,7 +1,0 @@
-# system packages, installed using apt-get or equivalent
-nodejs
-npm
-ruby
-
-# ruby gem:
-sass

@@ -10,7 +10,7 @@ module.exports = function(grunt) {
                     //configFile:
                 },
                 files: {
-                    src: ['Gruntfile.js', 'stylelint.config.js', '**/js/*.js']
+                    src: ['Gruntfile.js', 'stylelint.config.js', 'js/*.js']
                 }
             }
         },

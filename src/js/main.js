@@ -1,7 +1,7 @@
 (function($) {
+    // NOTE to any readers. I am too lazy to port this to ES6 / not-jQuery and leaving it alone.
     'use strict';
 
-    // consider refactoring modals
     var modal = {
         initDelay: 500,
         fadeTime: 500,

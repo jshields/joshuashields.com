@@ -2,9 +2,10 @@
   "name": "joshuashields.com",
   "version": "1.0.0",
   "description": "Personal website of Joshua Shields.",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev-server": "webpack --mode development --display-error-details",
+    "watch": "webpack -d --watch",
+    "build": "webpack -p"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,9 @@
   },
   "homepage": "https://github.com/jshields/joshuashields.com#readme",
   "devDependencies": {
+    "css-loader": "^2.1.0",
     "eslint": "^4.19.1",
+    "mini-css-extract-plugin": "^0.5.0",
     "node-sass": "^4.11.0",
     "sass-loader": "^7.1.0",
     "stylelint": "^9.9.0",

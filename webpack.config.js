@@ -11,6 +11,9 @@ module.exports = {
     Will need multiple entry points for processing JS, even just for copying files as-is?
     Use index.html as entry to find both JS and CSS? Don't really want / need to import CSS to JS entry point.
     Right now main.js outputs with just Webpack boilerplate and a reference to the main.scss file.
+    Webpack isn't really meant for building styles in parallel to JS modules, it supports requiring styles for particular components.
+    So this project is not a great example of a case when Webpack is useful.
+
     entry: {
         main: ['src/main.js', 'src/scss/main.scss']
     },*/

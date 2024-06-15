@@ -9,7 +9,10 @@ nvm install 22.3.0
 nvm use 22.3.0
 npm install
 npm install -g grunt-cli
-grunt
+
+# see Gruntfile.js
+grunt lint
+grunt deploy
 ```
 
 Lint:
@@ -28,3 +31,4 @@ npx stylelint "**/*.scss"
 
 TODO:
 replace grunt with yarn
+update all configs and modules to a consistent style (i.e. mjs)

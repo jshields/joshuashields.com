@@ -1,7 +1,6 @@
 .btn {
     text-decoration: none;
     text-align: center;
-    /* stylelint-disable-next-line shorthand-property-no-redundant-values */
     margin: 0.4em auto 0 auto;
     padding: 1em 0;
     font-size: 2em;
@@ -44,11 +43,12 @@
 }
 */
 
-@media screen and (max-width: 590px) {
+@media screen and (width <= 590px) {
     /* remove animations for buttons on mobile */
     .btn {
         width: 80%;
     }
+
     .btn:hover {
         width: 80%;
     }

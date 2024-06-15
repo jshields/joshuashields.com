@@ -13,7 +13,7 @@
 }
 
 *:focus {
-    // is this bad to override the browser default here?
+    // TODO: double check that change to focus style does not impact accessibility
     @extend %outline;
 }
 
@@ -34,17 +34,21 @@ footer {
     padding: 1em 0;
     width: 100%;
 }
-h1, h2, h3, {
+
+h1, h2, h3 {
     margin: 0 0 0.1em 0;
     display: block;
     font-weight: bold;
 }
+
 .heading {
     font-size: $font-biggest;
 }
+
 .subheading {
     font-size: $font-bigger;
 }
+
 div, nav {
     border-radius: 0;
 }
@@ -62,9 +66,11 @@ a {
 .text-left {
     text-align: left;
 }
+
 .list {
     margin: 0;
 }
+
 .list-description {
     padding: $min-gutter;
     margin: 0;
@@ -86,6 +92,7 @@ a {
     margin: 2em 1em 1em 1em;
     display: inline-block;
 }
+
 .img-link-wrap a img {
     padding: 0;
     vertical-align: middle;
@@ -94,6 +101,7 @@ a {
 .icons-wrap {
     display: inline;
 }
+
 #social-media-icons {
     position: relative;
     left: 200%;
@@ -107,6 +115,7 @@ a {
     animation: slide 1s forwards;
     animation-delay: 0s;
 }
+
 @-webkit-keyframes slide {
     100% {left: 0;}
 }

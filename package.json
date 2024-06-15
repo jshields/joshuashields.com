@@ -1,6 +1,6 @@
 {
   "name": "joshuashields.com",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Personal website of Joshua Shields.",
   "main": "index.js",
   "scripts": {
@@ -18,15 +18,18 @@
   },
   "homepage": "https://github.com/jshields/joshuashields.com#readme",
   "devDependencies": {
-    "grunt": "^1.0.3",
+    "globals": "^15.4.0",
+    "grunt": "^1.5.3",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-sass": "^1.0.0",
-    "grunt-eslint": "^20.2.0",
-    "grunt-stylelint": "^0.10.0",
-    "stylelint": "^9.3.0"
+    "grunt-eslint": "^25.0.0",
+    "grunt-stylelint": "^0.20.1",
+    "stylelint": "^16.6.1",
+    "stylelint-config-standard": "^36.0.0",
+    "stylelint-config-standard-scss": "^13.1.0"
   },
   "dependencies": {
     "font-awesome": "^4.6.3",
-    "jquery": "^3.4.0"
+    "jquery": "^3.5.0"
   }
 }

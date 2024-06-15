@@ -1,7 +1,3 @@
-# system packages, installed using apt-get or equivalent
-nodejs
-npm
-ruby
-
-# ruby gem:
+# System packages, installed using apt-get, brew or equivalent:
+nvm
 sass

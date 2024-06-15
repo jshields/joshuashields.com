@@ -1,5 +1,5 @@
 (function($) {
-    // NOTE to any readers. I am too lazy to port this to ES6 / not-jQuery and leaving it alone.
+    // TODO: port to ES6 and replace jQuery with something else
     'use strict';
 
     var modal = {

@@ -14,6 +14,7 @@
 Overlaid or covering elements
 E.g. popovers, modals, etc.
 */
+/* stylelint-disable-next-line alpha-value-notation */
 /* Interactive UI elements */
 /* Active state */
 /* Inactive state */
@@ -29,7 +30,7 @@ $stateColors: (
 /* FIXME outline width varies greatly between browsers */
 *:focus {
   outline-style: solid;
-  outline-color: #1a80e6;
+  outline-color: hsl(210, 80%, 50%);
 }
 
 /* Typography */
@@ -37,25 +38,25 @@ $stateColors: (
 .btn {
   text-decoration: none;
   text-align: center;
-  vertical-align: middle;
   margin: 0.4em auto 0 auto;
   padding: 1em 0;
   font-size: 2em;
-  background-color: #732673;
+  background-color: hsl(300, 50%, 30%);
   color: #eee;
   border: none;
   display: block;
   cursor: pointer;
   width: 80%;
+  transition: width 0.5s ease-out;
   -webkit-transition: width 0.5s ease-out;
   -moz-transition: width 0.5s ease-out;
   -o-transition: width 0.5s ease-out;
-  transition: width 0.5s ease-out;
+  appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
 }
 .btn:hover {
-  background-color: #d98cd9;
+  background-color: hsl(300, 50%, 70%);
   color: #111;
   -webkit-transition: width 0.5s ease-out;
   -moz-transition: width 0.5s ease-out;
@@ -77,12 +78,11 @@ $stateColors: (
     filter: invert(1);
 }
 */
-@media screen and (max-width: 590px) {
+@media screen and (width <= 590px) {
   /* remove animations for buttons on mobile */
   .btn {
     width: 80%;
   }
-
   .btn:hover {
     width: 80%;
   }
@@ -120,8 +120,8 @@ $stateColors: (
 
 .modal-col {
   z-index: 50;
-  width: calc(100%*2/3);
-  margin-left: calc(100%/6);
+  width: 66.6666666667%;
+  margin-left: 16.6666666667%;
 }
 
 /* Grid */
@@ -129,8 +129,8 @@ $stateColors: (
   overflow: hidden;
   padding-top: 3.5%;
   text-align: center;
-  width: calc(100%*2/3);
-  margin-left: calc(100%/6);
+  width: 66.6666666667%;
+  margin-left: 16.6666666667%;
 }
 
 .col-60 {
@@ -139,12 +139,12 @@ $stateColors: (
 
 .col-third {
   float: left;
-  width: calc(100%/3);
+  width: 33.3333333333%;
 }
 
 .col-20 {
   float: left;
-  width: calc(100%/5);
+  width: 20%;
 }
 
 ::selection {
@@ -160,7 +160,7 @@ html, body {
 
 body {
   color: #eee;
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   background: #111 url("../images/shield_logo_4.png") no-repeat fixed center;
   background-size: 50% auto;
 }
@@ -191,11 +191,11 @@ div, nav {
 
 a {
   text-decoration: none;
-  color: #732673;
+  color: hsl(300, 50%, 30%);
   font-style: initial;
 }
 a:hover {
-  color: #d98cd9;
+  color: hsl(300, 50%, 70%);
 }
 
 .text-left {
@@ -212,11 +212,11 @@ a:hover {
 }
 
 #pro-pic {
-  background-image: url("../images/josh4.jpg");
+  background-image: url("../images/nutella_cropped.png");
   background-repeat: no-repeat;
   background-position: center;
   border: 0.3em solid #111;
-  background-size: 150%;
+  background-size: 110%;
   width: 15em;
   height: 15em;
   margin-left: 1em;
@@ -271,7 +271,7 @@ a:hover {
     left: 0;
   }
 }
-@media screen and (max-width: 1024px) {
+@media screen and (width <= 1024px) {
   #pro-pic {
     width: 8em;
     height: 8em;
@@ -279,21 +279,17 @@ a:hover {
     display: block;
     margin: 0 auto;
   }
-
   .list-description {
     clear: both;
   }
-
   .modal {
     position: absolute;
     height: 160%;
   }
-
   .modal-col {
     width: 100%;
     margin-left: 0;
   }
-
   .main-col {
     overflow: hidden;
     padding-top: 0%;
@@ -302,7 +298,7 @@ a:hover {
     margin-left: 0;
   }
 }
-@media screen and (max-width: 512px) {
+@media screen and (width <= 512px) {
   #social-media-icons .icons-wrap {
     display: block;
   }

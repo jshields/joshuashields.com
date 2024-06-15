@@ -4,10 +4,21 @@ Website of Joshua Shields.
 
 ## Usage:
 
-``npm install``
+```
+nvm install 22.3.0
+nvm use 22.3.0
+npm install
+npm install -g grunt-cli
 
-``grunt``
+# see Gruntfile.js
+grunt lint
+grunt deploy
+```
 
+Lint:
+```
+npx stylelint "**/*.scss"
+```
 
 ### [jQuery UI custom dependency:](http://jqueryui.com/download/#!version=1.12.1&components=001010011110000000000000000000000000000000000000)
 * :data Selector
@@ -16,3 +27,8 @@ Website of Joshua Shields.
 * labels
 * scrollParent
 * :tabbable Selector
+
+
+TODO:
+replace grunt with yarn
+update all configs and modules to a consistent style (i.e. mjs)

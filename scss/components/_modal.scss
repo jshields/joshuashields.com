@@ -5,6 +5,7 @@
     display: none;
     position: fixed;
 }
+
 .modal-back {
     z-index: 20;
     display: table;
@@ -14,19 +15,22 @@
     background: $color-transparent-overlay;
     margin: 0 auto;
 }
+
 .modal-front {
     z-index: 30;
     display: table-cell;
     vertical-align: middle;
 }
+
 .modal-content {
     z-index: 40;
     text-align: center;
     color: $color-text-overlay;
     background-color: $color-bg-overlay;
 }
+
 .modal-col {
     z-index: 50;
-    width: calc(100%*2/3);
-    margin-left: calc(100%/6);
+    width: calc(100% * 2 / 3);
+    margin-left: calc(100% / 6);
 }

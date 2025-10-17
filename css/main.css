@@ -6,6 +6,11 @@ html, body {
     background-color: #090909;
 }
 
+*:focus {
+  outline-style: solid;
+  outline-color: hsl(123, 80%, 50%);
+}
+
 header {
     text-align: center;
 }

@@ -1,45 +1,83 @@
 html, body {
     margin: 0;
     padding: 0;
-    background-color: #eee;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #ddd;
+    background-color: #090909;
 }
 
-.banner .heading {
+header {
+    text-align: center;
+}
+h1, h2, h3 {
     font-family: monospace;
-    font-size: 4em;
-    margin: 0 1%;
+    margin: 0.1em 0;
+}
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    object-fit: cover;
 }
 
-.footer {
+main {
+    font-size: 1.2em;
+    margin: 1% auto 4em auto;  /* footer height of 3em bottom plus 1em wiggle room */
+    width: 80%;
+}
+
+.card {
+    padding: 1%;
+    margin: 2% auto;
+    box-shadow: 2px 4px 5px #ddd;
+    background-color: #111;
+    width: 50%;
+}
+li {
+    margin: 1% auto;
+}
+
+a {
+    color: #2e2;
+    cursor: pointer;
+}
+a:visited {
+    color: #6c6;
+    cursor: pointer;
+}
+
+.button, .button:visited {
+    font-size: 1.5em;
+    display: inline-block;
+    padding: 0.5em 1em;
+    margin: 1em auto;
+    background-color: #2e2;
+    color: #111;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.button:hover {
+    background-color: #6c6;
+    color: #000;
+}
+
+footer {
     bottom: 0;
     position: fixed;
     display: block;
     width: 100%;
     height: 3em;
-    background-color: #eee;
-    box-shadow: 0px -4px 5px #333;
-}
-.footer a {
-    /*
-    this method of vertically centering text will work
-    for a *single* line of text in a container
-     */
-    line-height: 3em;  /* footer height: 3em */
-    vertical-align: middle;
+    line-height: 3em;  /* Vertically center the text */
+    text-align: center;
     padding: 0 1em;
+    background-color: #111;
+    box-shadow: 0px -2px 5px #ddd;
 }
 
-.main {
-    font-size: 1.2em;
-    margin: 1% auto 3em auto;  /* footer height: 3em */
-    width: 90%;
-}
-.main .list {
-    margin: 1% auto;
-    box-shadow: 0px 4px 5px #333;
-}
-.main .list-item {
-    padding: 1%;
-    margin: 1% auto;
+*[class^='iconoir-'], *[class*=' iconoir-'] {
+    height: 1.2em;
+    width: 1.2em;
+    vertical-align: middle;
 }

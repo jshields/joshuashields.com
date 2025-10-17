@@ -1,307 +1,45 @@
-/* Color wheel cheat sheet */
-/* Simple base shades */
-/*
-@function contrast-text-color($bg-color) {
-  @if (lightness($bg-color) > 50) {
-    @return #color-dark;
-  } @else {
-    @return $color-bright;
-  }
-}
-*/
-/* Base layer (non-overlay) */
-/*
-Overlaid or covering elements
-E.g. popovers, modals, etc.
-*/
-/* stylelint-disable-next-line alpha-value-notation */
-/* Interactive UI elements */
-/* Active state */
-/* Inactive state */
-/* Status */
-/*
-$stateColors: (
-    info: (body: $color-bg-info, accent: $color-accent-info),
-    success: (),
-    error:()
-);
-*/
-/* TODO use PostCSS instead of this mixin */
-/* FIXME outline width varies greatly between browsers */
-*:focus {
-  outline-style: solid;
-  outline-color: hsl(210, 80%, 50%);
-}
-
-/* Typography */
-/* Images */
-.btn {
-  text-decoration: none;
-  text-align: center;
-  margin: 0.4em auto 0 auto;
-  padding: 1em 0;
-  font-size: 2em;
-  background-color: hsl(300, 50%, 30%);
-  color: #eee;
-  border: none;
-  display: block;
-  cursor: pointer;
-  width: 80%;
-  transition: width 0.5s ease-out;
-  -webkit-transition: width 0.5s ease-out;
-  -moz-transition: width 0.5s ease-out;
-  -o-transition: width 0.5s ease-out;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
-.btn:hover {
-  background-color: hsl(300, 50%, 70%);
-  color: #111;
-  -webkit-transition: width 0.5s ease-out;
-  -moz-transition: width 0.5s ease-out;
-  -o-transition: width 0.5s ease-out;
-  transition: width 0.5s ease-out;
-  width: 95%;
-}
-
-.btn .icon {
-  vertical-align: middle;
-}
-
-/*
-.btn img {
-    vertical-align: middle;
-}
-.btn:hover img {
-    -webkit-filter: invert(1);
-    filter: invert(1);
-}
-*/
-@media screen and (width <= 590px) {
-  /* remove animations for buttons on mobile */
-  .btn {
-    width: 80%;
-  }
-  .btn:hover {
-    width: 80%;
-  }
-}
-.modal {
-  z-index: 10;
-  width: 100%;
-  height: 100%;
-  display: none;
-  position: fixed;
-}
-
-.modal-back {
-  z-index: 20;
-  display: table;
-  position: absolute;
-  width: inherit;
-  height: inherit;
-  background: rgba(255, 255, 255, 0.75);
-  margin: 0 auto;
-}
-
-.modal-front {
-  z-index: 30;
-  display: table-cell;
-  vertical-align: middle;
-}
-
-.modal-content {
-  z-index: 40;
-  text-align: center;
-  color: #111;
-  background-color: #eee;
-}
-
-.modal-col {
-  z-index: 50;
-  width: 66.6666666667%;
-  margin-left: 16.6666666667%;
-}
-
-/* Grid */
-.main-col {
-  overflow: hidden;
-  padding-top: 3.5%;
-  text-align: center;
-  width: 66.6666666667%;
-  margin-left: 16.6666666667%;
-}
-
-.col-60 {
-  width: 60%;
-}
-
-.col-third {
-  float: left;
-  width: 33.3333333333%;
-}
-
-.col-20 {
-  float: left;
-  width: 20%;
-}
-
-::selection {
-  background-color: #111;
-  color: #eee;
-}
-
 html, body {
-  margin: 0;
-  width: 100%;
-  height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #eee;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-body {
-  color: #eee;
-  font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  background: #111 url("../images/shield_logo_4.png") no-repeat fixed center;
-  background-size: 50% auto;
+.banner .heading {
+    font-family: monospace;
+    font-size: 4em;
+    margin: 0 1%;
 }
 
-footer {
-  text-align: center;
-  padding: 1em 0;
-  width: 100%;
-}
-
-h1, h2, h3 {
-  margin: 0 0 0.1em 0;
-  display: block;
-  font-weight: bold;
-}
-
-.heading {
-  font-size: 2.618em;
-}
-
-.subheading {
-  font-size: 1.618em;
-}
-
-div, nav {
-  border-radius: 0;
-}
-
-a {
-  text-decoration: none;
-  color: hsl(300, 50%, 30%);
-  font-style: initial;
-}
-a:hover {
-  color: hsl(300, 50%, 70%);
-}
-
-.text-left {
-  text-align: left;
-}
-
-.list {
-  margin: 0;
-}
-
-.list-description {
-  padding: 0.5em;
-  margin: 0;
-}
-
-#pro-pic {
-  background-image: url("../images/nutella_cropped.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  border: 0.3em solid #111;
-  background-size: 110%;
-  width: 15em;
-  height: 15em;
-  margin-left: 1em;
-  float: right;
-}
-
-.img-link-wrap {
-  margin: 2em 1em 1em 1em;
-  display: inline-block;
-}
-
-.img-link-wrap a img {
-  padding: 0;
-  vertical-align: middle;
-}
-
-.icons-wrap {
-  display: inline;
-}
-
-#social-media-icons {
-  position: relative;
-  left: 200%;
-  width: 100%;
-  -webkit-animation: slide 1s forwards;
-  -webkit-animation-delay: 0s;
-  -moz-animation: slide 1s forwards;
-  -moz-animation-delay: 0s;
-  -o-animation: slide 1s forwards;
-  -o-animation-delay: 0s;
-  animation: slide 1s forwards;
-  animation-delay: 0s;
-}
-
-@-webkit-keyframes slide {
-  100% {
-    left: 0;
-  }
-}
-@-moz-keyframes slide {
-  100% {
-    left: 0;
-  }
-}
-@-o-keyframes slide {
-  100% {
-    left: 0;
-  }
-}
-@keyframes slide {
-  100% {
-    left: 0;
-  }
-}
-@media screen and (width <= 1024px) {
-  #pro-pic {
-    width: 8em;
-    height: 8em;
-    float: none;
+.footer {
+    bottom: 0;
+    position: fixed;
     display: block;
-    margin: 0 auto;
-  }
-  .list-description {
-    clear: both;
-  }
-  .modal {
-    position: absolute;
-    height: 160%;
-  }
-  .modal-col {
     width: 100%;
-    margin-left: 0;
-  }
-  .main-col {
-    overflow: hidden;
-    padding-top: 0%;
-    text-align: center;
-    width: 100%;
-    margin-left: 0;
-  }
+    height: 3em;
+    background-color: #eee;
+    box-shadow: 0px -4px 5px #333;
 }
-@media screen and (width <= 512px) {
-  #social-media-icons .icons-wrap {
-    display: block;
-  }
+.footer a {
+    /*
+    this method of vertically centering text will work
+    for a *single* line of text in a container
+     */
+    line-height: 3em;  /* footer height: 3em */
+    vertical-align: middle;
+    padding: 0 1em;
 }
 
-/*# sourceMappingURL=main.css.map */
+.main {
+    font-size: 1.2em;
+    margin: 1% auto 3em auto;  /* footer height: 3em */
+    width: 90%;
+}
+.main .list {
+    margin: 1% auto;
+    box-shadow: 0px 4px 5px #333;
+}
+.main .list-item {
+    padding: 1%;
+    margin: 1% auto;
+}

@@ -1,3 +1,0 @@
-# System packages, installed using apt-get, brew or equivalent:
-nvm
-sass

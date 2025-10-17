@@ -1,307 +1,88 @@
-/* Color wheel cheat sheet */
-/* Simple base shades */
-/*
-@function contrast-text-color($bg-color) {
-  @if (lightness($bg-color) > 50) {
-    @return #color-dark;
-  } @else {
-    @return $color-bright;
-  }
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #ddd;
+    background-color: #090909;
 }
-*/
-/* Base layer (non-overlay) */
-/*
-Overlaid or covering elements
-E.g. popovers, modals, etc.
-*/
-/* stylelint-disable-next-line alpha-value-notation */
-/* Interactive UI elements */
-/* Active state */
-/* Inactive state */
-/* Status */
-/*
-$stateColors: (
-    info: (body: $color-bg-info, accent: $color-accent-info),
-    success: (),
-    error:()
-);
-*/
-/* TODO use PostCSS instead of this mixin */
-/* FIXME outline width varies greatly between browsers */
+
 *:focus {
   outline-style: solid;
-  outline-color: hsl(210, 80%, 50%);
+  outline-color: hsl(123, 80%, 50%);
 }
 
-/* Typography */
-/* Images */
-.btn {
-  text-decoration: none;
-  text-align: center;
-  margin: 0.4em auto 0 auto;
-  padding: 1em 0;
-  font-size: 2em;
-  background-color: hsl(300, 50%, 30%);
-  color: #eee;
-  border: none;
-  display: block;
-  cursor: pointer;
-  width: 80%;
-  transition: width 0.5s ease-out;
-  -webkit-transition: width 0.5s ease-out;
-  -moz-transition: width 0.5s ease-out;
-  -o-transition: width 0.5s ease-out;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+header {
+    text-align: center;
 }
-.btn:hover {
-  background-color: hsl(300, 50%, 70%);
-  color: #111;
-  -webkit-transition: width 0.5s ease-out;
-  -moz-transition: width 0.5s ease-out;
-  -o-transition: width 0.5s ease-out;
-  transition: width 0.5s ease-out;
-  width: 95%;
-}
-
-.btn .icon {
-  vertical-align: middle;
-}
-
-/*
-.btn img {
-    vertical-align: middle;
-}
-.btn:hover img {
-    -webkit-filter: invert(1);
-    filter: invert(1);
-}
-*/
-@media screen and (width <= 590px) {
-  /* remove animations for buttons on mobile */
-  .btn {
-    width: 80%;
-  }
-  .btn:hover {
-    width: 80%;
-  }
-}
-.modal {
-  z-index: 10;
-  width: 100%;
-  height: 100%;
-  display: none;
-  position: fixed;
-}
-
-.modal-back {
-  z-index: 20;
-  display: table;
-  position: absolute;
-  width: inherit;
-  height: inherit;
-  background: rgba(255, 255, 255, 0.75);
-  margin: 0 auto;
-}
-
-.modal-front {
-  z-index: 30;
-  display: table-cell;
-  vertical-align: middle;
-}
-
-.modal-content {
-  z-index: 40;
-  text-align: center;
-  color: #111;
-  background-color: #eee;
-}
-
-.modal-col {
-  z-index: 50;
-  width: 66.6666666667%;
-  margin-left: 16.6666666667%;
-}
-
-/* Grid */
-.main-col {
-  overflow: hidden;
-  padding-top: 3.5%;
-  text-align: center;
-  width: 66.6666666667%;
-  margin-left: 16.6666666667%;
-}
-
-.col-60 {
-  width: 60%;
-}
-
-.col-third {
-  float: left;
-  width: 33.3333333333%;
-}
-
-.col-20 {
-  float: left;
-  width: 20%;
-}
-
-::selection {
-  background-color: #111;
-  color: #eee;
-}
-
-html, body {
-  margin: 0;
-  width: 100%;
-  height: 100%;
-}
-
-body {
-  color: #eee;
-  font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  background: #111 url("../images/shield_logo_4.png") no-repeat fixed center;
-  background-size: 50% auto;
-}
-
-footer {
-  text-align: center;
-  padding: 1em 0;
-  width: 100%;
-}
-
 h1, h2, h3 {
-  margin: 0 0 0.1em 0;
-  display: block;
-  font-weight: bold;
+    font-family: monospace;
+    margin: 0.1em 0;
+}
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    object-fit: cover;
 }
 
-.heading {
-  font-size: 2.618em;
+main {
+    font-size: 1.2em;
+    margin: 1% auto 4em auto;  /* footer height of 3em bottom plus 1em wiggle room */
+    width: 80%;
 }
 
-.subheading {
-  font-size: 1.618em;
+.card {
+    padding: 1%;
+    margin: 2% auto;
+    box-shadow: 2px 4px 5px #ddd;
+    background-color: #111;
+    width: 50%;
 }
-
-div, nav {
-  border-radius: 0;
+li {
+    margin: 1% auto;
 }
 
 a {
-  text-decoration: none;
-  color: hsl(300, 50%, 30%);
-  font-style: initial;
+    color: #2e2;
+    cursor: pointer;
 }
-a:hover {
-  color: hsl(300, 50%, 70%);
-}
-
-.text-left {
-  text-align: left;
+a:visited {
+    color: #6c6;
+    cursor: pointer;
 }
 
-.list {
-  margin: 0;
+.button, .button:visited {
+    font-size: 1.5em;
+    display: inline-block;
+    padding: 0.5em 1em;
+    margin: 1em auto;
+    background-color: #2e2;
+    color: #111;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.button:hover {
+    background-color: #6c6;
+    color: #000;
 }
 
-.list-description {
-  padding: 0.5em;
-  margin: 0;
-}
-
-#pro-pic {
-  background-image: url("../images/nutella_cropped.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  border: 0.3em solid #111;
-  background-size: 110%;
-  width: 15em;
-  height: 15em;
-  margin-left: 1em;
-  float: right;
-}
-
-.img-link-wrap {
-  margin: 2em 1em 1em 1em;
-  display: inline-block;
-}
-
-.img-link-wrap a img {
-  padding: 0;
-  vertical-align: middle;
-}
-
-.icons-wrap {
-  display: inline;
-}
-
-#social-media-icons {
-  position: relative;
-  left: 200%;
-  width: 100%;
-  -webkit-animation: slide 1s forwards;
-  -webkit-animation-delay: 0s;
-  -moz-animation: slide 1s forwards;
-  -moz-animation-delay: 0s;
-  -o-animation: slide 1s forwards;
-  -o-animation-delay: 0s;
-  animation: slide 1s forwards;
-  animation-delay: 0s;
-}
-
-@-webkit-keyframes slide {
-  100% {
-    left: 0;
-  }
-}
-@-moz-keyframes slide {
-  100% {
-    left: 0;
-  }
-}
-@-o-keyframes slide {
-  100% {
-    left: 0;
-  }
-}
-@keyframes slide {
-  100% {
-    left: 0;
-  }
-}
-@media screen and (width <= 1024px) {
-  #pro-pic {
-    width: 8em;
-    height: 8em;
-    float: none;
+footer {
+    bottom: 0;
+    position: fixed;
     display: block;
-    margin: 0 auto;
-  }
-  .list-description {
-    clear: both;
-  }
-  .modal {
-    position: absolute;
-    height: 160%;
-  }
-  .modal-col {
     width: 100%;
-    margin-left: 0;
-  }
-  .main-col {
-    overflow: hidden;
-    padding-top: 0%;
+    height: 3em;
+    line-height: 3em;  /* Vertically center the text */
     text-align: center;
-    width: 100%;
-    margin-left: 0;
-  }
-}
-@media screen and (width <= 512px) {
-  #social-media-icons .icons-wrap {
-    display: block;
-  }
+    padding: 0 1em;
+    background-color: #111;
+    box-shadow: 0px -2px 5px #ddd;
 }
 
-/*# sourceMappingURL=main.css.map */
+*[class^='iconoir-'], *[class*=' iconoir-'] {
+    height: 1.2em;
+    width: 1.2em;
+    vertical-align: middle;
+}

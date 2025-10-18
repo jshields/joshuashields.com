@@ -85,6 +85,12 @@ footer {
     box-shadow: 0px -2px 5px #ddd;
 }
 
+/*
+.easter-egg {
+    margin: 0 0 3.2em 0.2em;
+}
+*/
+
 *[class^='iconoir-'], *[class*=' iconoir-'] {
     height: 1.2em;
     width: 1.2em;

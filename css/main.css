@@ -41,7 +41,7 @@ main {
 .card {
     padding: 1%;
     margin: 2% auto;
-    box-shadow: 2px 4px 5px #ddd;
+    box-shadow: -2px 4px 5px #ddd;
     background-color: #111;
 }
 li {
